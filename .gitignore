@@ -1,0 +1,14 @@
+# Log files	
+	._*
+	.DS*
+	.idea/
+	*.log
+	**/.DS_Store
+
+# Sublime specific files
+	*.sublime-workspace
+	*.sublime-project
+
+# Folders
+	**/node_modules/**
+	**/dist/**/*
