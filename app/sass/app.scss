@@ -1,8 +1,32 @@
-/* some sass */  
-* {
-	box-sizing: border-box;
-}
-body {
-	margin: -1px;
-  	padding: 1px;
-}
+/*/
+
+	itcss structure
+
+/*/
+
+// Vendor
+
+
+// Animations-keyframes
+@import "settings.keyframes.spin";
+
+// Settings
+@import "settings.mixin.ellipsis";
+@import "settings.mixin.font-face";
+@import "settings.mixin.font-size";
+@import "settings.mixin.font-smoothing";
+
+@import "settings.mixin.arrow";
+@import "settings.mixin.breakpoint";
+@import "settings.mixin.clearfix";
+@import "settings.mixin.image-2x";
+@import "settings.mixin.loader";
+@import "settings.mixin.material";
+@import "settings.mixin.placeholder";
+@import "settings.mixin.pos";
+@import "settings.mixin.scrollbar";
+@import "settings.mixin.vendor";
+@import "settings.typography";
+
+// Core
+@import "core.defaults";

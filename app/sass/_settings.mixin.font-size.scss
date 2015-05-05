@@ -1,0 +1,24 @@
+/*/
+    1.2 font-size
+    
+    Example usage:
+      font-size(16);
+      font-size(16, medium);
+      font-size(16, medium, 24);
+    
+    Notes: 
+      Note that the numeric font-size is required to allow the line-height to be generated correctly.
+/*/
+  @mixin font-size($size, $keyword: null, $line-height:$line-height--base) {
+      @if $keyword{
+          font-size: $keyword;
+      }
+      @else {
+          font-size: 0px + $size;
+          font-size: $size / $font-size--standard +rem;
+      }
+
+      line-height: round($line-height / $size*10000) / 10000;
+      margin-bottom: 0px + $line-height;
+      margin-bottom: ($line-height / $font-size--standard)+rem ;
+  }

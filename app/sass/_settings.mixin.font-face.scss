@@ -1,0 +1,15 @@
+/*/
+  1.1 font-face
+/*/
+  @mixin font-face-custom($fontpath, $familyname, $filename, $weight: 400, $style: normal){
+    @font-face {
+       font-family: '#{$familyname}';
+       src: url('#{$fontpath}#{$filename}.eot?');
+       src: url('#{$fontpath}#{$filename}.eot?#iefix') format('embedded-opentype'), 
+        url('#{$fontpath}#{$filename}.woff?') format('woff'), 
+        url('#{$fontpath}#{$filename}.ttf?') format('truetype'), 
+        url('#{$fontpath}#{$filename}.svg?') format('svg');
+       font-weight: $weight;
+       font-style: $style;
+    }
+  }

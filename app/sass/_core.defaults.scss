@@ -1,0 +1,19 @@
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #ccc;
+  font-family: 'Dosis';
+  font-size: 15px;
+  margin: 0;
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+.wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 30px auto 0;
+}

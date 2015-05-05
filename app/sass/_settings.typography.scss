@@ -1,0 +1,83 @@
+$base-font-size: 18px !default;
+$base-line-height: 14px !default;
+$min-line-padding: 2px !default;
+$round-to-nearest-half-line: true !default;
+$browser-default-font-size: 16px !default;
+
+// Strip units - http://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass
+@function strip-units($number) {
+	@return $number / ($number * 0 + 1);
+}
+
+// Convert Bourbon's modular scale to pixels
+@function modular-scale-pixels($scale) {
+	@return strip-units(modular-scale($scale)) * $base-font-size;
+}
+
+// Font size
+@function em($target, $context: $base-font-size) {
+	@if $target == 0 {
+		@return 0;
+	}
+	
+	@return $target / $context + 0em;
+}
+
+// Rythm
+@function rhythm($lines, $font-size: $base-font-size) {
+	@return em($lines * $base-line-height, $font-size);
+}
+
+// Lines
+@function lines-for-font-size($font-size, $padding: true) {
+	$lines: if($round-to-nearest-half-line,
+		ceil(2 * $font-size / $base-line-height) / 2,
+		ceil($font-size / $base-line-height));
+
+	// If lines are cramped include some extra lead.
+	@if ($padding) {
+		@if ($lines * $base-line-height - $font-size) < ($min-line-padding * 2) {
+			$lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
+		}
+	}
+
+	@return $lines;
+}
+
+// Establish baseline
+@mixin establish-baseline($font-size: $base-font-size, $relative-font-sizing: true) {
+	$relative-size: 100% * $font-size / $browser-default-font-size;
+	$lines: lines-for-font-size($font-size);
+
+	@if ($relative-font-sizing) {
+		font-size: $relative-size;
+		line-height: $lines * $base-line-height / $font-size;
+	} @else {
+		font-size: $font-size;
+		line-height: $lines * $base-line-height;
+	}
+}
+
+// Leader spacing
+@mixin leader($lines, $font-size: $base-font-size, $property: margin) {
+	#{$property}-top: rhythm($lines, $font-size);
+}
+
+// Trailer spacing
+@mixin trailer($lines, $font-size: $base-font-size, $property: margin) {
+	#{$property}-bottom: rhythm($lines, $font-size);
+}
+
+// Adjust leading
+@mixin adjust-leading-to($lines, $font-size: $base-font-size) {
+	line-height: rhythm($lines, $font-size);
+}
+
+// Set font size
+@mixin adjust-font-size-to($to-size, $lines: auto, $from-size: $base-font-size) {
+	@if $lines == auto {
+		$lines: lines-for-font-size($to-size);
+	}
+	font-size: em($to-size, $from-size);
+	@include adjust-leading-to($lines, $to-size);
+}

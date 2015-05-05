@@ -2,7 +2,7 @@
 	var bump = require('gulp-bump');
 
 // Import config
-	var config = require('./config');
+	var config = require('./_config');
 
 // Bump module
 	module.exports = function(gulp, bumpType){

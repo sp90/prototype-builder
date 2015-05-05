@@ -1,5 +1,5 @@
 // Import config
-	var config = require('./config');
+	var config = require('./_config');
 
 // Html module
 	module.exports = function(gulp){

@@ -5,7 +5,7 @@
     var runSequence = require('run-sequence');
 
 // Get/set variables
-	var config = require('./gulp/config');
+	var config = require('./gulp/_config');
 	var bumpType = [argv.bump] || ['build'];
 
 ///

@@ -8,7 +8,7 @@
 		    .pipe(server({
 				livereload: true,
 				directoryListing: false,
-				defaultFile: 'index.html'
+				defaultFile: 'layout.html'
 		    }));
 		});
 	};

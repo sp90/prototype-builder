@@ -1,0 +1,25 @@
+/*/
+
+    3.1 Breakpoints
+
+/*/
+  @mixin breakpoint($point) {
+
+    @if $point == giga {
+      @media only screen and (min-width: 1900px) { @content ; }
+    } @else if $point == mega {
+      @media only screen and (min-width: 1360px)  { @content ; }
+    } @else if $point == kilo {
+      @media only screen and (min-width: 1025px)  { @content ; }
+    } @else if $point == centi {
+      @media only screen and (min-width: 960px)   { @content ; }
+    } @else if $point == milli {
+      @media only screen and (min-width: 768px)   { @content ; }
+    } @else if $point == nano {
+      @media only screen and (min-width: 568px) { @content ; }
+    } @else if $point == print {
+      @media print { @content ; }
+    } @else if str-index($point, max) == 1 or str-index($point, min) == 1 {
+      @media only screen and (#{$point}) { @content ; }
+    }
+  }
