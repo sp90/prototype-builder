@@ -14,3 +14,4 @@
 # Folders
 node_modules/**/*
 dist/**/*
+app/vendor/**/*
