@@ -18,10 +18,10 @@
                 templateUrl: "partials/index.html", 
                 controller: 'IndexController',
                 controllerAs: 'vm'
-            });
+            }); 
 
         $urlRouterProvider 
             .otherwise("/");
     }
 
-})();
+})(); 

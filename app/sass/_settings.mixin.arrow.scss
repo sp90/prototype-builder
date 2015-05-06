@@ -20,7 +20,7 @@
     border-right: $size solid transparent;
     border-left: $size solid transparent;
   } @else if $direction == 'left' {
-    border-top: $size solid transparent;
+    border-top: $size solid transparent; 
     border-right: $size solid $color;
     border-bottom: $size solid transparent;
   } @else if $direction == 'topleft' {
@@ -29,12 +29,12 @@
     border-right: $size solid transparent;  
   } @else if $direction == 'topright' {
     $size: $size * 1.5;
-    border-top: $size solid $color; 
+    border-top: $size solid $color;
     border-left: $size solid transparent;
   } @else if $direction == 'bottomleft' {
     $size: $size * 1.5;
     border-bottom: $size solid $color; 
-    border-right: $size solid transparent;  
+    border-right: $size solid transparent;   
   } @else if $direction == 'bottomright' {
     $size: $size * 1.5; 
     border-bottom: $size solid $color; 

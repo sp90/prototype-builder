@@ -42,7 +42,8 @@
 		});
 
 	// Creates a watch task to watch files and build async
-		gulp.task('watch', ['default', 'serve'], function () {
+		gulp.task('watch', function () {
+			runSequence(['default', 'serve']);
 		    gulp.watch(config.copy, ['copy']);
 		    gulp.watch(config.sass, ['sass']);
 		    gulp.watch(config.scripts, ['scripts']);

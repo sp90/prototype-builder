@@ -1,6 +1,6 @@
 module.exports = {
 	sass: [
-		'app/sass/*'
+		'app/sass/**/*'
 	],
 	copy: [
 	    'app/copy/**/*'
