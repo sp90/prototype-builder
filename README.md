@@ -18,6 +18,9 @@ This is build to develop small applications, so its a step between codepen.io, a
 **Clone, and install**
 
 ```
+	cd /your/dev/folder
+	git clone https://github.com/sp90/prototype-builder.git
+	cd prototype-builder
 	npm install
 ```
 
