@@ -7,7 +7,7 @@ Why i build this prototype boilerplate if you will, is to enable myself to creat
 
 ### How
 
-How can you build a server ontop of this, its actually pretty easy you can build a node service ontop where you accept CORS and run it on another port, while this service runs you can build them devided this also gains some benefits on the deployment side, that you can host server in one docker container, and the frontend in another container.
+How can you build a server ontop of this, its actually pretty easy you can build a node service ontop where you accept CORS and run it on another port, while this service runs you can build them devided this also have some benefits on the deployment stage, that you can host server in one docker container, and the frontend in another container, and therefore spin up the amount of containers your app needs, so lets say you have an app which might have 10.000 request a min for frontend you might need to spin up multiple servers with the frontend, and then you might have a call once in a while a server call you can then spin up only 1 Api server.
 
 ## What
 
@@ -18,6 +18,9 @@ This is build to develop small applications, so its a step between codepen.io, a
 **Clone, and install**
 
 ```
+	cd /your/dev/folder
+	git clone https://github.com/sp90/prototype-builder.git
+	cd prototype-builder
 	npm install
 ```
 
