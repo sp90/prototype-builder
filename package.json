@@ -6,11 +6,11 @@
   "author": "Simon Dragsbæk Petersen - github.com/sp90 - dev@nomis.dk",
   "license": "ISC",
   "dependencies": {
-    "gulp": "4.0.0",
+    "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",
     "gulp-bump": "^0.3.0",
     "gulp-concat": "^2.5.2",
-    "gulp-sass": "^1.3.3",
+    "gulp-sass": "^2.0.0",
     "gulp-server-livereload": "^1.2.4",
     "run-sequence": "^1.0.2",
     "yargs": "^3.7.2"
