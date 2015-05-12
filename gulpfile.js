@@ -1,7 +1,6 @@
 // Include gulp
     var gulp = require('gulp');
     var argv = require('yargs').argv;
-    var takana = require('takana');
     var runSequence = require('run-sequence');
 
 // Get/set variables
