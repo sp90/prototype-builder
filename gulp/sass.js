@@ -1,6 +1,6 @@
 // Import modules
     var sass = require('gulp-sass');
-    //var autoprefixer = require('gulp-autoprefixer');
+    var autoprefixer = require('gulp-autoprefixer');
 
 // Import config
 	var config = require('./_config');
@@ -9,8 +9,8 @@
 	module.exports = function(gulp){
 		gulp.task('sass', function(){
 		    return gulp.src(config.sass)
-		    	//.pipe(autoprefixer())
-		        .pipe(sass({errLogToConsole: true}))
+		        .pipe(sass().on('error', sass.logError))
+		    	.pipe(autoprefixer())
 		        .pipe(gulp.dest('dist/css'));
 	    });
 	};
