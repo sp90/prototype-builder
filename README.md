@@ -48,6 +48,7 @@ Besides this all the modules in ./gulp is configuable and you can drop in new fe
 ### What's included
 
 * Gulp
+	* ES6 -> ES5 with babel and more
 * Livereload
 * Server that serves an html file
 * Sass
