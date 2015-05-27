@@ -19,6 +19,7 @@
 		
 	// Imports Script
 		require('./gulp/scripts')(gulp);
+		require('./gulp/libs')(gulp);
 
 	// Imports Bump
 		require('./gulp/bump')(gulp, bumpType);
@@ -32,7 +33,7 @@
 	
 	// Creates a default build task
 		gulp.task('default', function(cb) {
-		    runSequence(['copy', 'sass', 'scripts'], cb);
+		    runSequence(['copy', 'sass', 'libs', 'scripts'], cb);
 		});
 
 	// Creates a release build task (adds a version bump)
@@ -45,5 +46,6 @@
 			runSequence(['default', 'serve']);
 		    gulp.watch(config.copy, ['copy']);
 		    gulp.watch(config.sass, ['sass']);
+		    gulp.watch(config.libs, ['libs']);
 		    gulp.watch(config.scripts, ['scripts']);
 		});
