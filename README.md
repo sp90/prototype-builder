@@ -70,4 +70,4 @@ Best regards
 **Nomis**
 
 
-Follow me my blog <a href="nomis.dk">nomis.dk</a>
+Follow me my blog <a href="http://nomis.dk">nomis.dk</a>
