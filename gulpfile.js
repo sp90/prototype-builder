@@ -6,6 +6,7 @@
 // Get/set variables
 	var config = require('./gulp/_config');
 	var bumpType = [argv.bump] || ['build'];
+	var port = argv.p || 8000;
 
 ///
 ///	 Import modularized tasks
@@ -25,7 +26,7 @@
 		require('./gulp/bump')(gulp, bumpType);
 
 	// Imports Serve
-		require('./gulp/serve')(gulp);
+		require('./gulp/serve')(gulp, port);
 
 ///
 ///  Setup group tasks
