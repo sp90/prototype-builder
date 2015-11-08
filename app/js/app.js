@@ -1,8 +1,9 @@
 (function() {
-    'use strict';
+    // Don't apply strict its getting 
+    // applied by the babel es6 transpiler
 
     angular
-        .module('app',[
+        .module('app', [
             'ui.router',
             'app.controller.index'
         ])
@@ -10,18 +11,18 @@
 
     function Config($locationProvider, $stateProvider, $urlRouterProvider) {
          
-        //$locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(true);
 
         $stateProvider
-            .state('index', {
-                url: "/", 
-                templateUrl: "partials/index.html", 
-                controller: 'IndexController',
-                controllerAs: 'vm'
+            .state('start', {
+                url: '/', 
+                templateUrl: 'partials/start.html', 
+                controller: 'StartController',
+                controllerAs: 'start'
             }); 
 
         $urlRouterProvider 
-            .otherwise("/");
+            .otherwise('/');
     }
 
 })(); 
