@@ -58,11 +58,13 @@ This is build to develop small applications, so its a step between codepen.io, a
 * Easy to deploy
 * Establish git flow or similar
 * Delete existing dist folder on a bump and create a new with the new updates
-* Maybe add a clean operation
+* Add a clean operation
 * Add app manifest file with timestamp
 * Add uncss
 * Add critical css
 * Add sourcemaps for both sass and javascript
+* Add default seo support
+* Find out if this needs a dashboard as a very small cms for 
 
 Best regards
 
