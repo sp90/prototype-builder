@@ -50,6 +50,20 @@ This is build to develop small applications, so its a step between codepen.io, a
 		* angular-animate
 		* angular-aria
 
+### Todo's
+
+* CLI to write tests for each module
+* Bower component boilerplate
+* Better architecture for multiple apps
+* Easy to deploy
+* Establish git flow or similar
+* Delete existing dist folder on a bump and create a new with the new updates
+* Maybe add a clean operation
+* Add app manifest file with timestamp
+* Add uncss
+* Add critical css
+* Add sourcemaps for both sass and javascript
+
 Best regards
 
 **Nomis**

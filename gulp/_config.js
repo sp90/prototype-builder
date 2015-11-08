@@ -2,8 +2,11 @@ module.exports = {
 	sass: [
 	    'app/sass/**/*'
 	],
-	copy: [
-	    'app/copy/**/*'
+	html: [
+	    'app/html/**/*'
+	],
+	assets: [
+	    'app/assets/**/*'
 	],
 	scripts: [
 	    'app/js/app.js',

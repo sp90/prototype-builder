@@ -34,7 +34,7 @@
 	
 	// Creates a default build task
 		gulp.task('default', function(cb) {
-		    runSequence(['copy', 'sass', 'libs', 'scripts'], cb);
+		    runSequence(['html', 'assets', 'sass', 'libs', 'scripts'], cb);
 		});
 
 	// Creates a release build task (adds a version bump)
@@ -45,7 +45,8 @@
 	// Creates a watch task to watch files and build async
 		gulp.task('watch', function () {
 			runSequence(['default', 'serve']);
-		    gulp.watch(config.copy, ['copy']);
+		    gulp.watch(config.html, ['html']);
+		    gulp.watch(config.assets, ['assets']);
 		    gulp.watch(config.sass, ['sass']);
 		    gulp.watch(config.libs, ['libs']);
 		    gulp.watch(config.scripts, ['scripts']);
