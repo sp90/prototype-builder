@@ -52,19 +52,22 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 ### Todo's
 
-* CLI to write tests for each module
-* Bower component boilerplate
-* Better architecture for multiple apps
-* Easy to deploy
-* Establish git flow or similar
-* Delete existing dist folder on a bump and create a new with the new updates
-* Add a clean operation
-* Add app manifest file with timestamp
 * Add uncss
 * Add critical css
+* Add a clean operation
+* Add app manifest file with timestamp
 * Add sourcemaps for both sass and javascript
+* Add minification for js(uglify) & css(gulp-cssnano) 
 * Add default seo support
-* Find out if this needs a dashboard as a very small cms for 
+* Better architecture for multiple apps
+* Bower component boilerplate
+* Establish git flow or similar
+* Easy to deploy
+* Delete existing dist folder on a bump and create a new with the new updates
+* Find out if this needs a dashboard as a very small cms for easy changes
+* Enviroment variables
+* Cache busting on files (toggle by settings)
+* CLI to write tests for each module
 
 Best regards
 
