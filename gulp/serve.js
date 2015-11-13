@@ -8,7 +8,7 @@
 		    .pipe(server({
 				livereload: true,
 				directoryListing: false,
-				defaultFile: 'layout.html',
+				defaultFile: 'index.html',
 				port: parseInt(port)
 		    }));
 		});

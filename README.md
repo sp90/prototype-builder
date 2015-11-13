@@ -52,10 +52,8 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 ### Todo's
 
-* Add uncss
-* Add critical css
+* Add uncss #Not done due to issue in uncss with {{ hbs }}
 * Add a clean operation
-* Add app manifest file with timestamp
 * Add sourcemaps for both sass and javascript
 * Add minification for js(uglify) & css(gulp-cssnano) 
 * Add default seo support
