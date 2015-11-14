@@ -5,7 +5,7 @@
     angular
         .module('app', [
             'ui.router',
-            'app.controller.index'
+            'app.controller.start'
         ])
         .config(['$locationProvider','$stateProvider','$urlRouterProvider', Config]);
 
