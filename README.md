@@ -57,6 +57,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 * Add sourcemaps for both sass and javascript
 * Add minification for js(uglify) & css(gulp-cssnano) 
 * Add default seo support
+* Add test suite (mocha & chai)
 * Better architecture for multiple apps
 * Bower component boilerplate
 * Establish git flow or similar
