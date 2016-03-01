@@ -52,6 +52,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 ### Todo's
 
+* Remove ng-annotate
 * Add uncss #Not done due to issue in uncss with {{ hbs }}
 * Add a clean operation
 * Add sourcemaps for both sass and javascript
