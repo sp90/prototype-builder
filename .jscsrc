@@ -1,0 +1,75 @@
+{
+	"excludeFiles": ["vendor/**"],
+
+	"requireCommaBeforeLineBreak": null,
+	"requireDotNotation": null,
+	"requireLineFeedAtFileEnd": true,
+	"requireMultipleVarDecl": null,
+	"requireParenthesesAroundIIFE": true,
+	"requireSpaceAfterBinaryOperators": true,
+	"requireSpaceBeforeBlockStatements": true,
+	"requireSpacesInConditionalExpression": true,
+	"requireOperatorBeforeLineBreak": true,
+	"requireCamelCaseOrUpperCaseIdentifiers": false,
+
+	"requireCurlyBraces": [
+		"if",
+		"else",
+		"for",
+		"while",
+		"do",
+		"try",
+		"catch"
+	],
+
+	"requireSpaceBeforeBinaryOperators": [
+		"=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
+		"&=", "|=", "^=", "+=",
+
+		"+", "-", "*", "/", "%", "<<", ">>", ">>>", "&",
+		"|", "^", "&&", "||", "===", "==", ">=",
+		"<=", "<", ">", "!=", "!=="
+	],
+
+	"requireSpaceAfterKeywords": [
+		"if",
+		"else",
+		"for",
+		"while",
+		"do",
+		"switch",
+		"return",
+		"try",
+		"catch"
+	],
+	
+	"validateIndentation": "\t",
+	"validateQuoteMarks": "'",
+
+	"disallowCommaBeforeLineBreak": null,
+	"disallowDanglingUnderscores": null,
+	"disallowEmptyBlocks": null,
+	"disallowMixedSpacesAndTabs": true,
+	"disallowMultipleLineBreaks": true,
+	"disallowMultipleLineStrings": true,
+	"disallowMultipleVarDecl": null,
+	"disallowSpaceAfterPrefixUnaryOperators": true,
+	"disallowSpacesInsideArrayBrackets": "all",
+	"disallowSpacesInsideObjectBrackets": "all",
+	"disallowSpacesInsideParentheses": true,
+	"disallowTrailingComma": null,
+	"disallowTrailingWhitespace": true,
+
+	"jsDoc": {
+		"checkAnnotations": {
+			"preset": "jsdoc3",
+			"extra": {
+				"ngdoc": true
+			}
+		},
+		"checkParamNames": true,
+		"requireParamTypes": true,
+		"checkReturnTypes": true,
+		"checkTypes": true
+	}
+}
