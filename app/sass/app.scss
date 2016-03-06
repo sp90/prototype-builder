@@ -2,4 +2,14 @@
  *	Main app scss
  */
 
-@import "core/defaults"; 
+// Settings
+@import "settings/variables";
+
+// Core
+@import "core/defaults";
+@import "core/inputs";
+
+// Modules
+@import "modules/header";
+@import "modules/article";
+@import "modules/section";

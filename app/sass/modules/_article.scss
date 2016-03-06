@@ -1,0 +1,13 @@
+article {
+	margin-bottom: ($spacing--base * 2);
+	h2 {
+		color: $color--primary;
+		text-transform: capitalize;
+	}
+
+}
+.article__fallback h3 {
+	text-align: center;
+	color: #aaa;
+	font-weight: 400;
+}

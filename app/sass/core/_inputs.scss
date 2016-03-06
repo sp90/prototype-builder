@@ -1,0 +1,11 @@
+input {
+	width: 100%;
+	font-size: $font--size-base;
+	font-family: $font-family--base;
+	padding: 20px 0;
+	border: none;
+	margin: 0 0 $spacing--base;
+	&:focus {
+		outline: none;
+	}
+}
