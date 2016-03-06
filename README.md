@@ -13,10 +13,20 @@ This is build to develop small applications, so its a step between codepen.io, a
 **Clone, and install**
 
 ```
+	// Development repo
 	cd /your/dev/folder
+
+	// Clone the project
 	git clone https://github.com/sp90/prototype-builder.git
+	
+	// Go into the project
 	cd prototype-builder
+	
+	// Install project files
 	npm install
+
+	// Get third party libs
+	bower install
 ```
 
 **Build, and watch**
@@ -30,6 +40,12 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 	// Watch for changes
 	gulp watch
+```
+
+### Test your code
+
+```
+	karma start karma-conf.js
 ```
 
 
@@ -53,6 +69,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 * Add uncss #Not done due to issue in uncss with {{ hbs }}
 * Add a clean operation
+* Add ngdocs or similar to build docs
 * Add sourcemaps for both sass and javascript
 * Add minification for js(uglify) & css(gulp-cssnano) 
 * Add default seo support
