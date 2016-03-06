@@ -19,8 +19,8 @@
     "tests"
   ],
   "dependencies": {
-    "lodash": "~3.7.0",
-    "angular": "~1.4.7",
-    "angular-ui-router": "~0.2.15"
+    "lodash": "^4.6.1",
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18"
   }
 }
