@@ -52,17 +52,14 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 ### Todo's
 
-* Remove ng-annotate
 * Add uncss #Not done due to issue in uncss with {{ hbs }}
 * Add a clean operation
 * Add sourcemaps for both sass and javascript
 * Add minification for js(uglify) & css(gulp-cssnano) 
 * Add default seo support
 * Add test suite (mocha & chai)
-* Build a react fork
 * Add static site generator
 * Better architecture for multiple apps
-* Bower component boilerplate
 * Establish git flow or similar
 * Easy to deploy
 * Delete existing dist folder on a bump and create a new with the new updates
