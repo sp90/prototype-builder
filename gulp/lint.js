@@ -5,8 +5,8 @@ var path = require('path');
 var jscs = require('gulp-jscs');
 
 // Linting module
-module.exports = function(gulp) {
-	gulp.task('lint', function(){
+module.exports = function(gulp, livereload) {
+	gulp.task('lint', function() {
 		return gulp.src(config.scripts)
 			.pipe(jscs({
 				fix: false,
