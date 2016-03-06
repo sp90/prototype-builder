@@ -7,11 +7,12 @@ var ngAnnotate = require('gulp-ng-annotate');
 var config = require('./_config');
 
 // Html module
-module.exports = function(gulp) {
-	gulp.task('scripts', function(){
+module.exports = function(gulp, livereload) {
+	gulp.task('scripts', function() {
 		return gulp.src(config.scripts)
 			.pipe(babel())
 			.pipe(concat('app.js'))
-			.pipe(gulp.dest('dist'));
+			.pipe(gulp.dest('dist'))
+			.pipe(livereload());
 	});
 };

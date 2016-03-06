@@ -7,11 +7,12 @@ var autoprefixer = require('gulp-autoprefixer');
 var config = require('./_config');
 
 // Sass module
-module.exports = function(gulp){
-	gulp.task('sass', function(){
-	    return gulp.src(config.sass)
-	        .pipe(sass().on('error', sass.logError))
-	    	.pipe(autoprefixer())
-	        .pipe(gulp.dest('dist'));
-    });
+module.exports = function(gulp, livereload) {
+	gulp.task('sass', function() {
+		return gulp.src(config.sass)
+			.pipe(sass().on('error', sass.logError))
+			.pipe(autoprefixer())
+			.pipe(gulp.dest('dist'))
+			.pipe(livereload());
+	});
 };

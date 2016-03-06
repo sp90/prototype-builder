@@ -5,10 +5,11 @@ var concat = require('gulp-concat');
 var config = require('./_config');
 
 // Html module
-module.exports = function(gulp) {
-	gulp.task('libs', function(){
+module.exports = function(gulp, livereload) {
+	gulp.task('libs', function() {
 		return gulp.src(config.libs)
 			.pipe(concat('app-libs.js'))
-			.pipe(gulp.dest('dist'));
+			.pipe(gulp.dest('dist'))
+			.pipe(livereload());
 	});
 };
