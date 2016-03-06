@@ -1,18 +1,23 @@
+<!-- Init angular app -->
 <html ng-app="app">
 	<head>
+		<!-- Set base url for pretty url support angular -->
 		<base href="/">
-		<title>Prototype builder</title>
-		
-		<link rel="ico" href="/assets/favicon.ico" />
+
+		<!-- Set meta data -->
+		<title>Roman info</title>
+
+		<!-- Get/Set assets -->
+
+		<!-- Embed stylesheet -->
 		<link rel="stylesheet" href="/app.css" />
-		
-		<script type="text/javascript" src="/app-libs.js"></script>
 	</head>
 	<body>
-		<h1>Prototype builder</h1>
-
+		<!-- Init view -->
 		<div class="main" ui-view></div>
 
+		<!-- Embed scripts -->
+		<script type="text/javascript" src="/app-libs.js"></script>
 		<script type="text/javascript" src="/app.js"></script>
 	</body>
 </html>

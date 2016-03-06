@@ -2,29 +2,47 @@
 	// No strict because of babel.js
 
 	var modules = [
+		// Angular native modules
+		'ngSanitize',
+
+		// Third party
 		'ui.router',
-		'app.controller.start'
+
+		// Custom
+		'app.controller.rome'
 	];
 
 	angular
 		.module('app', modules)
 		.config(Config);
 
+	// Inject dependencies
 	Config.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
 
+	// Config app
 	function Config($locationProvider, $stateProvider, $urlRouterProvider) {
 		$locationProvider.html5Mode(true);
 
 		$stateProvider
-			.state('start', {
+			.state('rome', {
 				url: '/',
-				templateUrl: 'partials/start.html',
-				controller: 'StartController',
-				controllerAs: 'start'
+				templateUrl: 'partials/rome.html',
+				controller: 'RomeController',
+				controllerAs: 'rome',
+				resolve: {
+					romans: romans
+				}
 			});
 
 		$urlRouterProvider
 			.otherwise('/');
 	}
 
+	// Get romans to resolve before page load
+	function romans(Romans) {
+		return Romans.get()
+			.then(function(romans) {
+				return romans;
+			});
+	}
 })();

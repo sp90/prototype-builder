@@ -22,6 +22,7 @@ module.exports = {
 	],
 	libs: [
 		'app/vendor/angular/angular.js',
+		'app/vendor/angular-sanitize/angular-sanitize.js',
 		'app/vendor/angular-ui-router/release/angular-ui-router.js'
 	]
 };

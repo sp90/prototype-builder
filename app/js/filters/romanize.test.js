@@ -33,6 +33,24 @@ describe('Roman filter', function() {
 
 			expect(result).to.equal('VI');
 		});
+
+		it('should filter 90 into IV', function() {
+			var result = $filter('romanize')(90);
+
+			expect(result).to.equal('XC');
+		});
+
+		it('should filter 1999 into IV', function() {
+			var result = $filter('romanize')(1999);
+
+			expect(result).to.equal('MCMXCIX');
+		});
+
+		it('should filter 2444 into IV', function() {
+			var result = $filter('romanize')(2444);
+
+			expect(result).to.equal('MMCDXLIV');
+		});
 	})
 
 	/**
@@ -55,6 +73,24 @@ describe('Roman filter', function() {
 			var result = $filter('deromanize')('VI');
 
 			expect(result).to.equal(6);
+		});
+
+		it('should filter 90 into IV', function() {
+			var result = $filter('deromanize')('XC');
+
+			expect(result).to.equal(90);
+		});
+
+		it('should filter 1999 into IV', function() {
+			var result = $filter('deromanize')('MCMXCIX');
+
+			expect(result).to.equal(1999);
+		});
+
+		it('should filter 2444 into IV', function() {
+			var result = $filter('deromanize')('MMCDXLIV');
+
+			expect(result).to.equal(2444);
 		});
 	});
 });

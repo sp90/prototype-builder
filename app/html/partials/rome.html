@@ -1,0 +1,39 @@
+<header>
+	<h1>{{rome.title}}</h1>
+</header>
+
+<section>
+	<input
+		type="text"
+		placeholder="Search by name"
+		ng-model="search.name">
+
+	<!-- <label for="romanizeNumbers">Romanize birthdate</label>
+	<input
+		id="romanizeNumbers"
+		type="checkbox"
+		ng-model="romanizeNumbers"> -->
+
+	<article ng-if="filteredRomans.length > 0" ng-repeat="roman in filteredRomans = (rome.romans | filter:search)">
+		<h2>{{roman.name}}</h2>
+		<h4>
+			Lived from
+			<span ng-if="romanizeNumbers">{{ roman.birth | romanize }}</span>
+			<span ng-if="!romanizeNumbers">{{ roman.birth }}</span>
+			to
+			<span ng-if="romanizeNumbers">{{ roman.death | romanize }}</span>
+			<span ng-if="!romanizeNumbers">{{ roman.death }}</span>
+		</h4>
+		<div
+			class="profile-image"
+			style="background-image: url(/assets/{{ roman.img }});">
+		</div>
+		<div
+			class="bio"
+			ng-bind-html="roman.bio">
+	</article>
+
+	<article class="article__fallback" ng-if="filteredRomans.length === 0">
+		<h3>No romans to be found with that name, try again!</h3>
+	</article>
+</section>
