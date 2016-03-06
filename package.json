@@ -5,6 +5,9 @@
   "main": "gulpfile.js",
   "author": "Simon Dragsbæk Petersen - github.com/sp90 - dev@nomis.dk",
   "license": "ISC",
+  "scripts": {
+    "start": "node server.js"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "critical": "^0.6.0",
