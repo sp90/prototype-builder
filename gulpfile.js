@@ -1,61 +1,54 @@
-// Include gulp
-    var gulp = require('gulp');
-    var argv = require('yargs').argv;
-    var runSequence = require('run-sequence');
+// Include main scripts
+var gulp = require('gulp');
+var argv = require('yargs').argv;
+var runSequence = require('run-sequence');
 
-// Get/set variables
-	var config = require('./gulp/_config');
-	var bumpType = [argv.bump] || ['build'];
-	var port = argv.p || 8000;
+// Prep configuration
+var config = require('./gulp/_config');
+var bumpType = [argv.bump] || ['build'];
+var port = argv.p || 8000;
 
-///
-///	 Import modularized tasks
-///
+/**
+ *  Import modularized tasks
+ */	
 
-	// Imports Copy (copy assets and html)
-		require('./gulp/copy')(gulp);
+// Copy assets and html
+require('./gulp/copy')(gulp);
 
-	// Imports Sass
-		require('./gulp/sass')(gulp);
-		
-	// Imports Scripts
-		require('./gulp/scripts')(gulp);
-		require('./gulp/libs')(gulp);
+// Build Sass to css
+require('./gulp/sass')(gulp);
 
-	// Imports Bump
-		require('./gulp/bump')(gulp, bumpType);
+// Build JS libs
+require('./gulp/libs')(gulp);
 
-	// Imports Bump
-		require('./gulp/manifest')(gulp);
+// Lint and build JS scripts
+require('./gulp/lint')(gulp);
+require('./gulp/scripts')(gulp);
 
-	// Imports Serve
-		require('./gulp/serve')(gulp, port);
+// Serve index file with livereload
+require('./gulp/serve')(gulp, port);
 
-///
-///  Setup group tasks
-///	
-	
-	// Creates a default build task
-		gulp.task('default', function(cb) {
-		    runSequence(['sass', 'libs', 'scripts', 'html', 'assets', 'manifest'], cb);
-		});
 
-	// Creates a default build task
-		gulp.task('deploy', function(cb) {
-		    runSequence(['sass', 'libs', 'scripts', 'html--deploy', 'assets', 'manifest'], 'clean-html-tmp', cb);
-		});
+/**
+ *  Setup group tasks
+ */	
 
-	// Creates a release build task (adds a version bump)
-		gulp.task('release', function(cb) {
-		    runSequence(['deploy', 'bump'], cb);
-		});
+// Default build
+gulp.task('default', function(cb) {
+	runSequence(['sass', 'libs', 'scripts', 'html', 'assets'], cb);
+});
 
-	// Creates a watch task to watch files and build async
-		gulp.task('watch', function () {
-			runSequence(['default', 'serve']);
-		    gulp.watch(config.sass, ['sass']);
-		    gulp.watch(config.libs, ['libs']);
-		    gulp.watch(config.scripts, ['scripts']);
-		    gulp.watch(config.html, ['html', 'clean-html-tmp']);
-		    gulp.watch(config.assets, ['assets']);
-		});
+// Build for deployment
+gulp.task('deploy', function(cb) {
+	runSequence(['sass', 'libs', 'scripts', 'html--deploy', 'assets'], 'clean-html-tmp', cb);
+});
+
+// Watch files for changes and run tasks
+gulp.task('watch', function () {
+	runSequence(['default', 'serve']);
+	gulp.watch(config.sass, ['sass']);
+	gulp.watch(config.libs, ['libs']);
+	gulp.watch(config.scripts, ['scripts', 'lint']);
+	gulp.watch(config.html, ['html', 'clean-html-tmp']);
+	gulp.watch(config.assets, ['assets']);
+});
