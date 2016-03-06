@@ -2,35 +2,34 @@
 var gulp = require('gulp');
 var argv = require('yargs').argv;
 var runSequence = require('run-sequence');
+var livereload = require('gulp-livereload');
 
 // Prep configuration
 var config = require('./gulp/_config');
 var bumpType = [argv.bump] || ['build'];
 var port = argv.p || 8000;
 
+
 /**
- *  Import modularized tasks
+ *  Import modularized sub tasks
  */	
 
 // Copy assets and html
-require('./gulp/copy')(gulp);
+require('./gulp/copy')(gulp, livereload);
 
 // Build Sass to css
-require('./gulp/sass')(gulp);
+require('./gulp/sass')(gulp, livereload);
 
 // Build JS libs
-require('./gulp/libs')(gulp);
+require('./gulp/libs')(gulp, livereload);
 
 // Lint and build JS scripts
-require('./gulp/lint')(gulp);
-require('./gulp/scripts')(gulp);
-
-// Serve index file with livereload
-require('./gulp/serve')(gulp, port);
+require('./gulp/lint')(gulp, livereload);
+require('./gulp/scripts')(gulp, livereload);
 
 
 /**
- *  Setup group tasks
+ *  Setup primary tasks
  */	
 
 // Default build
@@ -45,7 +44,10 @@ gulp.task('deploy', function(cb) {
 
 // Watch files for changes and run tasks
 gulp.task('watch', function () {
-	runSequence(['default', 'serve']);
+	runSequence(['default']);
+
+	livereload.listen();
+	
 	gulp.watch(config.sass, ['sass']);
 	gulp.watch(config.libs, ['libs']);
 	gulp.watch(config.scripts, ['scripts', 'lint']);
