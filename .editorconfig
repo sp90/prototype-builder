@@ -10,3 +10,12 @@ insert_final_newline = true
 
 [*.md]
 trim_trailing_whitespace = false
+
+# Due to when using install it auto indents 2 spaces
+[bower.json]
+indent_style = space
+indent_size = 2
+
+[package.json]
+indent_style = space
+indent_size = 2
