@@ -12,7 +12,7 @@ var port = argv.p || 8000;
 
 /**
  *  Import modularized sub tasks
- */	
+ */
 
 // Copy assets and html
 require('./gulp/copy')(gulp, livereload);
@@ -30,11 +30,11 @@ require('./gulp/scripts')(gulp, livereload);
 
 /**
  *  Setup primary tasks
- */	
+ */
 
 // Default build
 gulp.task('default', function(cb) {
-	runSequence(['sass', 'libs', 'scripts', 'html', 'assets'], cb);
+	runSequence(['sass', 'libs', 'lint', 'scripts', 'html', 'assets'], cb);
 });
 
 // Build for deployment
@@ -47,7 +47,7 @@ gulp.task('watch', function () {
 	runSequence(['default']);
 
 	livereload.listen();
-	
+
 	gulp.watch(config.sass, ['sass']);
 	gulp.watch(config.libs, ['libs']);
 	gulp.watch(config.scripts, ['scripts', 'lint']);
