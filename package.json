@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "author": "Simon Dragsbæk Petersen - github.com/sp90 - dev@nomis.dk",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "critical": "^0.6.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.2.0",
@@ -13,10 +13,16 @@
     "gulp-bump": "^0.3.1",
     "gulp-concat": "^2.5.2",
     "gulp-jscs": "^3.0.2",
+    "gulp-livereload": "^3.8.1",
     "gulp-sass": "^2.0.1",
-    "gulp-server-livereload": "^1.4.0",
+    "gulp-server-livereload": "^1.7.1",
     "gulp-uncss": "^1.0.4",
     "run-sequence": "^1.1.0",
     "yargs": "^3.10.0"
+  },
+  "dependencies": {
+    "compression": "^1.6.1",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0"
   }
 }
