@@ -4,6 +4,9 @@ var path = require('path');
 // Third party modules
 var jscs = require('gulp-jscs');
 
+// Import config
+var config = require('./_config');
+
 // Linting module
 module.exports = function(gulp, livereload) {
 	gulp.task('lint', function() {

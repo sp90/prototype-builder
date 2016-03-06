@@ -6,6 +6,7 @@
   "author": "Simon Dragsbæk Petersen - github.com/sp90 - dev@nomis.dk",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^3.5.0",
     "critical": "^0.6.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.2.0",
@@ -17,6 +18,11 @@
     "gulp-sass": "^2.0.1",
     "gulp-server-livereload": "^1.7.1",
     "gulp-uncss": "^1.0.4",
+    "karma": "^0.13.21",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.2",
+    "mocha": "^2.4.5",
     "run-sequence": "^1.1.0",
     "yargs": "^3.10.0"
   },

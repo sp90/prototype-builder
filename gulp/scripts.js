@@ -1,15 +1,16 @@
 // Import modules
 var concat = require('gulp-concat');
 var babel = require('gulp-babel');
-var ngAnnotate = require('gulp-ng-annotate');
 
 // Import config
 var config = require('./_config');
+var scripts = config.scripts
+				.concat(config.scriptsSkip);
 
 // Html module
 module.exports = function(gulp, livereload) {
 	gulp.task('scripts', function() {
-		return gulp.src(config.scripts)
+		return gulp.src(scripts)
 			.pipe(babel())
 			.pipe(concat('app.js'))
 			.pipe(gulp.dest('dist'))
