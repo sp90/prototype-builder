@@ -21,7 +21,6 @@ module.exports = {
 		'!app/js/**/*.mock.js'
 	],
 	libs: [
-		'app/vendor/lodash/dist/lodash.core.js',
 		'app/vendor/angular/angular.js',
 		'app/vendor/angular-ui-router/release/angular-ui-router.js'
 	]

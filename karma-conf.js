@@ -24,7 +24,6 @@ module.exports = function(config) {
 
 		// list of files / patterns to load in the browser
 		files: [
-			'app/vendor/lodash/dist/lodash.core.js',
 			'app/vendor/angular/angular.js',
 			'app/vendor/angular-ui-router/release/angular-ui-router.js',
 
