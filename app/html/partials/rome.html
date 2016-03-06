@@ -5,8 +5,8 @@
 <section>
 	<input
 		type="text"
-		placeholder="Search by name"
-		ng-model="search.name">
+		placeholder="Search contents"
+		ng-model="search">
 
 	<!-- <label for="romanizeNumbers">Romanize birthdate</label>
 	<input
@@ -15,6 +15,10 @@
 		ng-model="romanizeNumbers"> -->
 
 	<article ng-if="filteredRomans.length > 0" ng-repeat="roman in filteredRomans = (rome.romans | filter:search)">
+		<div
+			class="profile-image"
+			style="background-image: url(/assets/{{ roman.img }});">
+		</div>
 		<h2>{{roman.name}}</h2>
 		<h4>
 			Lived from
@@ -24,10 +28,6 @@
 			<span ng-if="romanizeNumbers">{{ roman.death | romanize }}</span>
 			<span ng-if="!romanizeNumbers">{{ roman.death }}</span>
 		</h4>
-		<div
-			class="profile-image"
-			style="background-image: url(/assets/{{ roman.img }});">
-		</div>
 		<div
 			class="bio"
 			ng-bind-html="roman.bio">
