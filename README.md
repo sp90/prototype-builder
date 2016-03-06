@@ -22,15 +22,14 @@ This is build to develop small applications, so its a step between codepen.io, a
 **Build, and watch**
 
 ```
-	gulp or gulp watch
-	gulp watch also run the default task
-```
+	// Start node server on port 3000
+	npm start
+	
+	// Build files
+	gulp
 
-**Release** 
-
-```
-	// Valid values for bump: `major|minor|patch|prerelease`
-	gulp release --bump=major
+	// Watch for changes
+	gulp watch
 ```
 
 
@@ -38,17 +37,17 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 * Gulp
 	* ES6 -> ES5 with babel, fixes stuff like strict mode
-	* Js Hint
-	* Annotations in angular
+	* Js lint
 * Livereload on all type of files
-* Serve files
+* Node to serve html files
 * Sass
 * JS
-	* Lodash core script
+	* Testing
+		* Karma
+		* Mocha
+		* Chai
 	* Angular
 		* ui-router
-		* angular-animate
-		* angular-aria
 
 ### Todo's
 
@@ -57,16 +56,13 @@ This is build to develop small applications, so its a step between codepen.io, a
 * Add sourcemaps for both sass and javascript
 * Add minification for js(uglify) & css(gulp-cssnano) 
 * Add default seo support
-* Add test suite (mocha & chai)
 * Add static site generator
 * Better architecture for multiple apps
-* Establish git flow or similar
 * Easy to deploy
 * Delete existing dist folder on a bump and create a new with the new updates
 * Find out if this needs a dashboard as a very small cms for easy changes
 * Enviroment variables
 * Cache busting on files (toggle by settings)
-* CLI to write tests for each module
 
 Best regards
 
