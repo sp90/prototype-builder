@@ -8,8 +8,8 @@
 		// Third party
 		'ui.router',
 
-		// Custom
-		'app.controller.rome'
+		// Controllers
+		'controller.rome'
 	];
 
 	angular

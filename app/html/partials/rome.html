@@ -8,12 +8,6 @@
 		placeholder="Search contents"
 		ng-model="search">
 
-	<!-- <label for="romanizeNumbers">Romanize birthdate</label>
-	<input
-		id="romanizeNumbers"
-		type="checkbox"
-		ng-model="romanizeNumbers"> -->
-
 	<article ng-if="filteredRomans.length > 0" ng-repeat="roman in filteredRomans = (rome.romans | filter:search)">
 		<div
 			class="profile-image"
@@ -36,4 +30,6 @@
 	<article class="article__fallback" ng-if="filteredRomans.length === 0">
 		<h3>No romans to be found with that name, try again!</h3>
 	</article>
+
+	<slider content="rome.sliderContent"></slider>
 </section>

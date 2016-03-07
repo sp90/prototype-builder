@@ -1,0 +1,17 @@
+<div
+	class="slider__item"
+	ng-class="sliderState == $index ? 'active' : ''"
+	ng-repeat="image in content track by $index"
+	style="background-image: url(/assets/{{ image }});">
+</div>
+
+<div
+	ng-click="next();"
+	class="slider__next">
+	>
+</div>
+<div
+	ng-click="prev();"
+	class="slider__prev">
+	<
+</div>

@@ -3,11 +3,12 @@
 
 	var modules = [
 		'filter.romanize',
-		'service.romans'
+		'service.romans',
+		'directive.slider'
 	];
 
 	angular
-		.module('app.controller.rome', modules)
+		.module('controller.rome', modules)
 		.controller('RomeController', RomeController);
 
 	RomeController.$inject = ['$scope', '$filter', 'romans'];
@@ -15,10 +16,15 @@
 	function RomeController($scope, $filter, romans) {
 		var rome = this;
 
-		// Bind object to scope
 		angular.extend(rome, {
 			title: '10 most famous people from acient rome',
-			romans: romans
+			romans: romans,
+			sliderContent: [
+				'commodus.jpg',
+				'tiberius-gracchus.jpg',
+				'julius-caesar.jpg',
+				'augustus.jpg'
+			]
 		});
 	}
 })();
