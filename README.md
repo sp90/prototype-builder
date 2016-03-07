@@ -67,6 +67,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 ### Todo's
 
+* Build a yoman generator for angular components
 * Add uncss #Not done due to issue in uncss with {{ hbs }}
 * Add a clean operation
 * Add ngdocs or similar to build docs
