@@ -52,10 +52,11 @@ This is build to develop small applications, so its a step between codepen.io, a
 ### What's included
 
 * Gulp
-	* ES6 -> ES5 with babel, fixes stuff like strict mode
+	* Babel
 	* Js lint
-* Livereload on all type of files
+	* Livereload
 * Node to serve html files
+* Dockerfile to containerize
 * Sass
 * JS
 	* Testing
@@ -65,22 +66,30 @@ This is build to develop small applications, so its a step between codepen.io, a
 	* Angular
 		* ui-router
 
-### Todo's
+### Next up Todo's
 
-* Build a yoman generator for angular components
-* Add uncss #Not done due to issue in uncss with {{ hbs }}
-* Add a clean operation
+* Clean dist on build
 * Add ngdocs or similar to build docs
-* Add sourcemaps for both sass and javascript
-* Add minification for js(uglify) & css(gulp-cssnano) 
-* Add default seo support
-* Add static site generator
-* Better architecture for multiple apps
-* Easy to deploy
-* Delete existing dist folder on a bump and create a new with the new updates
-* Find out if this needs a dashboard as a very small cms for easy changes
-* Enviroment variables
+* Sourcemaps for both sass and javascript
+* Minification for js(uglify) & css(gulp-cssnano) 
+* Sass linting
+* Support for vendor css files
+* Support move assets to s3 bucket (toggle in settings)
+* Default seo support
+* Add a change log
+* Contribution guide
+* Move guides and more to wiki
+
+### To be specced
+
 * Cache busting on files (toggle by settings)
+* Enviroment variables
+* Build a yoman generator for angular components
+* Static site generator
+
+### Backlog
+
+* Add uncss #Not done due to issue in uncss with {{ hbs }}
 
 Best regards
 
