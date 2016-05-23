@@ -3,7 +3,7 @@
 
 	angular
 		.module('service.romans', [])
-		.service('Romans', function($http, $q) {
+		.service('Romans', function($http, $q, $timeout) {
 			return {
 				get: get
 			};

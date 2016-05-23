@@ -9,7 +9,8 @@
 		'ui.router',
 
 		// Controllers
-		'controller.rome'
+		'controller.rome',
+		'controller.cv'
 	];
 
 	angular
@@ -28,21 +29,16 @@
 				url: '/',
 				templateUrl: 'partials/rome.html',
 				controller: 'RomeController',
-				controllerAs: 'rome',
-				resolve: {
-					romans: romans
-				}
+				controllerAs: 'rome'
+			})
+			.state('cv', {
+				url: '/cv',
+				templateUrl: 'partials/cv.html',
+				controller: 'CvController',
+				controllerAs: 'cv'
 			});
 
 		$urlRouterProvider
 			.otherwise('/');
-	}
-
-	// Get romans to resolve before page load
-	function romans(Romans) {
-		return Romans.get()
-			.then(function(romans) {
-				return romans;
-			});
 	}
 })();
