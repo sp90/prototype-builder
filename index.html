@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prototype-builder by sp90</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Prototype-builder</h1>
+      <h2 class="project-tagline">This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow</h2>
+      <a href="https://github.com/sp90/prototype-builder" class="btn">View on GitHub</a>
+      <a href="https://github.com/sp90/prototype-builder/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sp90/prototype-builder/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><a href="https://gitter.im/sp90/prototype-builder?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/sp90/prototype-builder"></a></p>
+
+<h1>
+<a id="prototype-builder-v12" class="anchor" href="#prototype-builder-v12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prototype-builder v1.2</h1>
+
+<p>This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow</p>
+
+<h2>
+<a id="what" class="anchor" href="#what" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What</h2>
+
+<p>This is build to develop small applications, so its a step between codepen.io, and an full blown app. This is a project you should clone and build and test out stuff. </p>
+
+<h3>
+<a id="getting-start" class="anchor" href="#getting-start" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting start</h3>
+
+<p><strong>Clone, and install</strong></p>
+
+<pre><code>    // Development repo
+    cd /your/dev/folder
+
+    // Clone the project
+    git clone https://github.com/sp90/prototype-builder.git
+
+    // Go into the project
+    cd prototype-builder
+
+    // Install project files
+    npm install
+
+    // Get third party libs
+    bower install
+</code></pre>
+
+<p><strong>Build, and watch</strong></p>
+
+<pre><code>    // Start node server on port 3000
+    npm start
+
+    // Build files
+    gulp
+
+    // Watch for changes
+    gulp watch
+</code></pre>
+
+<h3>
+<a id="test-your-code" class="anchor" href="#test-your-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test your code</h3>
+
+<pre><code>    karma start karma-conf.js
+</code></pre>
+
+<h3>
+<a id="whats-included" class="anchor" href="#whats-included" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What's included</h3>
+
+<ul>
+<li>Gulp
+
+<ul>
+<li>Babel</li>
+<li>Js lint</li>
+<li>Livereload</li>
+</ul>
+</li>
+<li>Node to serve html files</li>
+<li>Dockerfile to containerize</li>
+<li>Sass</li>
+<li>JS
+
+<ul>
+<li>Testing
+
+<ul>
+<li>Karma</li>
+<li>Mocha</li>
+<li>Chai</li>
+</ul>
+</li>
+<li>Angular
+
+<ul>
+<li>ui-router</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a id="next-up-todos" class="anchor" href="#next-up-todos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Next up Todo's</h3>
+
+<ul>
+<li>Clean dist on build</li>
+<li>Add ngdocs or similar to build docs</li>
+<li>Sourcemaps for both sass and javascript</li>
+<li>Minification for js(uglify) &amp; css(gulp-cssnano) </li>
+<li>Sass linting</li>
+<li>Support for vendor css files</li>
+<li>Support move assets to s3 bucket (toggle in settings)</li>
+<li>Default seo support</li>
+<li>Add a change log</li>
+<li>Contribution guide</li>
+<li>Move guides and more to wiki</li>
+</ul>
+
+<h3>
+<a id="to-be-specced" class="anchor" href="#to-be-specced" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To be specced</h3>
+
+<ul>
+<li>Cache busting on files (toggle by settings)</li>
+<li>Enviroment variables</li>
+<li>Build a yoman generator for angular components</li>
+<li>Static site generator</li>
+</ul>
+
+<h3>
+<a id="backlog" class="anchor" href="#backlog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Backlog</h3>
+
+<ul>
+<li>Add uncss #Not done due to issue in uncss with {{ hbs }}</li>
+</ul>
+
+<p>Best regards</p>
+
+<p><strong>Nomis</strong></p>
+
+<p>Follow me my blog <a href="http://nomis.dk">nomis.dk</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/sp90/prototype-builder">Prototype-builder</a> is maintained by <a href="https://github.com/sp90">sp90</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
