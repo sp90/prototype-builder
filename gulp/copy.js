@@ -10,18 +10,25 @@ module.exports = function(gulp, livereload) {
 			.pipe(gulp.dest('dist'))
 			.pipe(livereload());
 	});
+
 	gulp.task('html--deploy', function() {
 		return gulp.src(config.html)
-			.pipe(critical({base: 'dist/', inline: true, css: ['dist/css/app.css']}))
+			.pipe(critical({
+				base: 'dist/',
+				inline: true,
+				css: ['dist/app.css']
+			}))
 			.pipe(gulp.dest('dist'));
 	});
+
 	gulp.task('assets', function() {
 		return gulp.src(config.assets)
 			.pipe(gulp.dest('dist/assets'))
 			.pipe(livereload());
 	});
+
 	gulp.task('clean-html-tmp', function () {
 		return gulp.src('dist/tmp-**', {read: false})
 			.pipe(clean());
-	}); 
+	});
 };
