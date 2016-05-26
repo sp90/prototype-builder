@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v1.2
+# Prototype-builder v2.0
 
 This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow
 
