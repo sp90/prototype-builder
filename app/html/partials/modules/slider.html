@@ -1,6 +1,6 @@
 <div
 	class="slider__item"
-	ng-class="sliderState == $index ? 'active' : ''"
+	ng-class="sliderState == $index ? 'is-active' : ''"
 	ng-repeat="image in content track by $index"
 	style="background-image: url(/assets/{{ image }});">
 </div>

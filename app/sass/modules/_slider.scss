@@ -17,7 +17,7 @@ slider {
 	z-index: 0;
 	transition: opacity 300ms ease;
 
-	&.active {
+	&.is-active {
 		opacity: 1;
 	}
 }
