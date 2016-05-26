@@ -65,14 +65,17 @@ This is build to develop small applications, so its a step between codepen.io, a
 		* Chai
 	* Angular
 		* ui-router
+* Uglify
+* Sourcemaps
+* Cssnano
+* Add file revisions on prod build
+* Clean dist on build
+* Add uncss #Not done due to issue in uncss with {{ hbs }}
 
 ### Next up Todo's
 
-* Clean dist on build
-* Add ngdocs or similar to build docs
-* Sourcemaps for both sass and javascript
-* Minification for js(uglify) & css(gulp-cssnano) 
 * Sass linting
+* Add ngdocs or similar to build docs
 * Support for vendor css files
 * Support move assets to s3 bucket (toggle in settings)
 * Default seo support
@@ -86,10 +89,6 @@ This is build to develop small applications, so its a step between codepen.io, a
 * Enviroment variables
 * Build a yoman generator for angular components
 * Static site generator
-
-### Backlog
-
-* Add uncss #Not done due to issue in uncss with {{ hbs }}
 
 Best regards
 
