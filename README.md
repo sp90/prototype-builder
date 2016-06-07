@@ -45,7 +45,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 ### Test your code
 
 ```
-	karma start karma-conf.js
+	npm test
 ```
 
 
