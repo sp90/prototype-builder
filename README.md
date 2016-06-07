@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v2.0
+# Prototype-builder v2.1.0
 
 This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow
 
@@ -52,43 +52,44 @@ This is build to develop small applications, so its a step between codepen.io, a
 ### What's included
 
 * Gulp
-	* Babel
 	* Js lint
 	* Livereload
 * Node to serve html files
 * Dockerfile to containerize
 * Sass
+	* Linting
+	* Sourcemaps
+	* Cssnano
+	* Uncss
+	* Cache busting
 * JS
+	* Cache busting
+	* Linting
+	* Uglify
+	* Sourcemaps
+	* Documentation - ngdocs
+		* Clean docs folder on build
 	* Testing
 		* Karma
 		* Mocha
 		* Chai
 	* Angular
 		* ui-router
-* Uglify
-* Sourcemaps
-* Cssnano
 * Add file revisions on prod build
 * Clean dist on build
-* Add uncss #Not done due to issue in uncss with {{ hbs }}
+* Enviroment based build processes available: (prod, stag, dev) - default "dev"
 
 ### Next up Todo's
 
-* Sass linting
-* Add ngdocs or similar to build docs
+* Image minification
+* Html and Assets revision control
 * Support for vendor css files
 * Support move assets to s3 bucket (toggle in settings)
 * Default seo support
 * Add a change log
 * Contribution guide
 * Move guides and more to wiki
-
-### To be specced
-
-* Cache busting on files (toggle by settings)
-* Enviroment variables
 * Build a yoman generator for angular components
-* Static site generator
 
 Best regards
 
