@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v2.1.4
+# Prototype-builder v2.1.5
 
 This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow
 
@@ -53,7 +53,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 * Gulp
 	* Livereload
-* Node to serve html files
+* Node to serve dist folder and docs
 * Dockerfile to containerize
 * Sass
 	* Linting
@@ -74,20 +74,23 @@ This is build to develop small applications, so its a step between codepen.io, a
 		* Chai
 	* Angular
 		* ui-router
-* Revision on dist files
-	* html
-	* js
-	* json
-	* css
-	* jpg
-	* gif
-	* ico
-	* png
-	* svg
-* Revision url replacement
-	* html
-	* css
-	* js
+* File revision
+	* If s3 assets is turned on add s3 bucket url as prefix
+	* On following types
+		* html
+		* js
+		* json
+		* css
+		* jpg
+		* gif
+		* ico
+		* png
+		* svg
+	* Url replacement in following types
+		* html
+		* css
+		* js
+* Support move assets to s3 bucket
 * Clean dist on build
 * Image minification
 * Support for vendor css files
@@ -96,13 +99,12 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 ### Next up Todo's
 
-* Support move assets to s3 bucket (toggle in settings)
+* Rewrite starting app to be a simple hello world application with only nesseary content
 * Default seo support
+* Build a yoman generator for angular components
 * Add a change log
 * Contribution guide
 * Move guides and more to wiki
-* Build a yoman generator for angular components
-* Rewrite starting app to be a simple hello world application with only nesseary content
 
 Best regards
 
