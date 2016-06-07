@@ -22,7 +22,7 @@
       <p><a href="https://gitter.im/sp90/prototype-builder?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/sp90/prototype-builder"></a></p>
 
 <h1>
-<a id="prototype-builder-v212" class="anchor" href="#prototype-builder-v212" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prototype-builder v2.1.2</h1>
+<a id="prototype-builder-v215" class="anchor" href="#prototype-builder-v215" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prototype-builder v2.1.5</h1>
 
 <p>This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow</p>
 
@@ -77,11 +77,10 @@
 <li>Gulp
 
 <ul>
-<li>Js lint</li>
 <li>Livereload</li>
 </ul>
 </li>
-<li>Node to serve html files</li>
+<li>Node to serve dist folder and docs</li>
 <li>Dockerfile to containerize</li>
 <li>Sass
 
@@ -122,9 +121,38 @@
 </li>
 </ul>
 </li>
-<li>Add file revisions on prod build</li>
+<li>File revision
+
+<ul>
+<li>If s3 assets is turned on add s3 bucket url as prefix</li>
+<li>On following types
+
+<ul>
+<li>html</li>
+<li>js</li>
+<li>json</li>
+<li>css</li>
+<li>jpg</li>
+<li>gif</li>
+<li>ico</li>
+<li>png</li>
+<li>svg</li>
+</ul>
+</li>
+<li>Url replacement in following types
+
+<ul>
+<li>html</li>
+<li>css</li>
+<li>js</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Support move assets to s3 bucket</li>
 <li>Clean dist on build</li>
 <li>Image minification</li>
+<li>Support for vendor css files</li>
 <li>Dynamicly get libs for karma config</li>
 <li>Enviroment based build processes available: (prod, stag, dev) - default "dev"</li>
 </ul>
@@ -133,15 +161,19 @@
 <a id="next-up-todos" class="anchor" href="#next-up-todos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Next up Todo's</h3>
 
 <ul>
-<li>Html and Assets revision control</li>
-<li>Support for vendor css files</li>
-<li>Support move assets to s3 bucket (toggle in settings)</li>
+<li>Rewrite starting app to be a simple hello world application with only nesseary content (ES6/TYPESCRIPT/NG2)</li>
 <li>Default seo support</li>
+<li>Build a yoman generator for angular components</li>
 <li>Add a change log</li>
 <li>Contribution guide</li>
 <li>Move guides and more to wiki</li>
-<li>Build a yoman generator for angular components</li>
-<li>Rewrite starting app to be a simple hello world application with only nesseary content</li>
+</ul>
+
+<h3>
+<a id="known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known issues</h3>
+
+<ul>
+<li>Revreplace on assets/fixtures.{json}</li>
 </ul>
 
 <p>Best regards</p>
