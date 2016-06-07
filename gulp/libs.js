@@ -6,7 +6,7 @@ var uglify = require('gulp-uglify');
 // Import config
 var config = require('./_config');
 
-var env = process.env['NODE_ENV'] || 'dev';
+var env = process.env.NODE_ENV || 'dev';
 var live = env === 'prod' || env === 'staging';
 
 // Html module
