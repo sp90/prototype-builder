@@ -77,11 +77,11 @@ This is build to develop small applications, so its a step between codepen.io, a
 		* ui-router
 * Add file revisions on prod build
 * Clean dist on build
+* Image minification
 * Enviroment based build processes available: (prod, stag, dev) - default "dev"
 
 ### Next up Todo's
 
-* Image minification
 * Html and Assets revision control
 * Support for vendor css files
 * Support move assets to s3 bucket (toggle in settings)
