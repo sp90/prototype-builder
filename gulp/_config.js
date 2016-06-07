@@ -1,10 +1,10 @@
 module.exports = {
 	output: 'dist/*',
 	sass: [
-		'app/sass/**/*'
+		'app/sass/**/*.scss'
 	],
 	html: [
-		'app/html/**/*'
+		'app/html/**/*.html'
 	],
 	assets: [
 		'app/assets/**/*'
