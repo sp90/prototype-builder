@@ -1,6 +1,6 @@
 {
   "name": "prototype-boilerplate",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow",
   "main": "gulpfile.js",
   "homepage": "http://prototype-builder.nomis.dk/",

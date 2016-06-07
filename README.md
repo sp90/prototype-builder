@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v2.1.2
+# Prototype-builder v2.1.3
 
 This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow
 
@@ -75,7 +75,20 @@ This is build to develop small applications, so its a step between codepen.io, a
 		* Chai
 	* Angular
 		* ui-router
-* Add file revisions on prod build
+* Revision on dist files
+	* html
+	* js
+	* json
+	* css
+	* jpg
+	* gif
+	* ico
+	* png
+	* svg
+* Revision url replacement
+	* html
+	* css
+	* js
 * Clean dist on build
 * Image minification
 * Dynamicly get libs for karma config
@@ -83,7 +96,6 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 ### Next up Todo's
 
-* Html and Assets revision control
 * Support for vendor css files
 * Support move assets to s3 bucket (toggle in settings)
 * Default seo support

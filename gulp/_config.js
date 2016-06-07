@@ -7,7 +7,7 @@ module.exports = {
 		'app/html/**/*.html'
 	],
 	images: [
-		'app/images/**/*.{jpg,gif,png,svg}'
+		'app/images/**/*.{jpg,gif,png,svg,ico}'
 	],
 	assets: [
 		'app/assets/**/*'
