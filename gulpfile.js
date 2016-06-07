@@ -14,9 +14,6 @@ var port = argv.p || 8000;
  */
 
 // Copy assets and html
-require('./gulp/clean')(gulp);
-
-// Copy assets and html
 require('./gulp/copy')(gulp, livereload);
 
 // Build Sass to css
@@ -25,10 +22,10 @@ require('./gulp/sass')(gulp, livereload);
 // Build JS libs
 require('./gulp/libs')(gulp, livereload);
 
-// Lint and build JS scripts
-require('./gulp/lint')(gulp, livereload);
+// Lint and build JS scripts and docs
 require('./gulp/scripts')(gulp, livereload);
 
+// Add revision numbers for cache busting
 require('./gulp/revReplace')(gulp);
 
 
@@ -37,7 +34,7 @@ require('./gulp/revReplace')(gulp);
  */
 
 // Default build
-gulp.task('default', gulp.series('clean-dist', gulp.parallel('sass', 'libs', 'lint', 'scripts', 'html', 'assets')));
+gulp.task('default', gulp.series('clean-dist', gulp.parallel('sass-lint', 'sass', 'libs', 'script-lint', 'scripts', 'html', 'assets')));
 
 // Build for deployment
 gulp.task('deploy', gulp.series('clean-dist', 'html', gulp.parallel('sass', 'libs', 'scripts', 'assets'), 'html--deploy', 'rev', 'rev-replace', 'clean-html-tmp'));
@@ -46,9 +43,9 @@ gulp.task('deploy', gulp.series('clean-dist', 'html', gulp.parallel('sass', 'lib
 gulp.task('watch', gulp.series('default', function () {
 	livereload.listen();
 
-	gulp.watch(config.sass, gulp.parallel('sass'));
+	gulp.watch(config.sass, gulp.parallel('sass', 'sass-lint'));
 	gulp.watch(config.libs, gulp.parallel('libs'));
-	gulp.watch(config.scripts, gulp.parallel('scripts', 'lint'));
+	gulp.watch(config.scripts, gulp.parallel('scripts', 'script-lint'));
 	gulp.watch(config.html, gulp.parallel('html', 'clean-html-tmp'));
 	gulp.watch(config.assets, gulp.parallel('assets'));
 }));
