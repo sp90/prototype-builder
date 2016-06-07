@@ -52,7 +52,6 @@ This is build to develop small applications, so its a step between codepen.io, a
 ### What's included
 
 * Gulp
-	* Js lint
 	* Livereload
 * Node to serve html files
 * Dockerfile to containerize
