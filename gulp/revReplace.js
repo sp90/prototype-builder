@@ -1,7 +1,18 @@
 var rev = require('gulp-rev');
 var revReplace = require('gulp-rev-replace');
+var revdel = require('gulp-rev-delete-original');
 
-module.exports = function(gulp) {
+module.exports = function(gulp, useS3) {
+	var awsConf = false;
+
+	if (useS3) {
+		try {
+			awsConf = require('../.aws-conf.js');
+		} catch (e) {
+			console.log('[ERROR] .aws-conf.js not found: ', e);
+		}
+	}
+
 	// Build rev files
 	gulp.task('rev', function() {
 		return gulp.src([
@@ -9,6 +20,7 @@ module.exports = function(gulp) {
 				'!dist/index.html'
 			])
 			.pipe(rev())
+			.pipe(revdel())
 			.pipe(gulp.dest('dist'))
 			.pipe(rev.manifest())
 			.pipe(gulp.dest('dist'));
@@ -17,13 +29,18 @@ module.exports = function(gulp) {
 	// Replace paths in the following files
 	gulp.task('rev-replace', function() {
 		var manifest = gulp.src('./dist/rev-manifest.json');
+		var replaceOptions = {
+			manifest: manifest
+		};
+
+		if (awsConf !== false) {
+			replaceOptions.prefix = awsConf.url;
+		}
 
 		return gulp.src([
 				'dist/**/*.{html,js,css}'
 			])
-			.pipe(revReplace({
-				manifest: manifest
-			}))
+			.pipe(revReplace(replaceOptions))
 			.pipe(gulp.dest('dist'));
 	});
 };

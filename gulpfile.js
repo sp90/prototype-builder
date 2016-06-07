@@ -64,7 +64,7 @@ require('./gulp/scripts')(gulp, livereload);
  *    - rev
  *    - rev-replace
  */
-require('./gulp/revReplace')(gulp);
+require('./gulp/revReplace')(gulp, useS3);
 
 /**
  *  Copy to S3
