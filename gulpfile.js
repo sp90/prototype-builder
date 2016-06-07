@@ -8,24 +8,58 @@ var config = require('./gulp/_config');
 var bumpType = [argv.bump] || ['build'];
 var port = argv.p || 8000;
 
-
 /**
- *  Import modularized sub tasks
+ *	Include gulp tasks
  */
 
-// Copy assets and html
+/**
+ *  Copy assets and html
+ *
+ *  Tasks:
+ *    - html
+ *    - html--deploy
+ *    - clean-html-tmp
+ *    - clean-dist
+ *    - assets
+ */
 require('./gulp/copy')(gulp, livereload);
 
-// Build Sass to css
+/**
+ *  Compile sass
+ *
+ *  Tasks:
+ *    - sass
+ *    - sass-lint
+ */
 require('./gulp/sass')(gulp, livereload);
 
-// Build JS libs
+/**
+ *  Compile js libs
+ *
+ *  Tasks:
+ *    - libs
+ */
 require('./gulp/libs')(gulp, livereload);
 
-// Lint and build JS scripts and docs
+/**
+ *  Compile js scripts
+ *
+ *  Tasks:
+ *    - scripts
+ *    - scripts-lint
+ *    - build-docs
+ *	    - clean-docs
+ *	    - script-docs
+ */
 require('./gulp/scripts')(gulp, livereload);
 
-// Add revision numbers for cache busting
+/**
+ *  File revision for cache busting
+ *
+ *  Tasks:
+ *    - rev
+ *    - rev-replace
+ */
 require('./gulp/revReplace')(gulp);
 
 
