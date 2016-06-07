@@ -24,5 +24,9 @@ module.exports = {
 		'app/vendor/angular/angular.js',
 		'app/vendor/angular-sanitize/angular-sanitize.js',
 		'app/vendor/angular-ui-router/release/angular-ui-router.js'
+	],
+	docLibs: [
+		'app/vendor/angular-animate/angular-animate.js',
+		'app/vendor/marked/marked.min.js'
 	]
 };

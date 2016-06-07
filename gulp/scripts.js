@@ -1,10 +1,12 @@
 // Import modules
+var del = require('del');
 var concat = require('gulp-concat');
 var babel = require('gulp-babel');
 var gulpif = require('gulp-if');
 var jscs = require('gulp-jscs');
 var uglify = require('gulp-uglify');
 var replace = require('gulp-replace');
+var gulpDocs = require('gulp-ngdocs');
 var sourcemaps = require('gulp-sourcemaps');
 
 // Import config
@@ -39,4 +41,33 @@ module.exports = function(gulp, livereload) {
 			}))
 			.pipe(jscs.reporter());
 	});
+
+	gulp.task('clean-docs', function() {
+		// Clean docs before making a new one
+		return del(['docs']);
+	});
+
+	gulp.task('script-docs', function () {
+		var libs = config.libs.concat(config.docLibs);
+		var options = {
+			scripts: libs,
+			loadDefaults: {
+				angular: false,
+				angularAnimate: false,
+				marked: false
+			},
+			html5Mode: true,
+			startPage: '/docs/api',
+			title: 'Prototype builder',
+			image: 'http://localhost:3000/assets/favicon.ico',
+			imageLink: '/docs/api',
+			titleLink: '/docs/api'
+		};
+
+		return gulp.src(scripts)
+			.pipe(gulpDocs.process(options))
+			.pipe(gulp.dest('./docs'));
+	});
+
+	gulp.task('build-docs', gulp.series('clean-docs', 'script-docs'));
 };
