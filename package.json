@@ -1,10 +1,24 @@
 {
   "name": "prototype-boilerplate",
-  "version": "2.0",
+  "version": "2.1.0",
   "description": "This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow",
   "main": "gulpfile.js",
+  "homepage": "http://prototype-builder.nomis.dk/",
   "author": "Simon Dragsbæk Petersen - github.com/sp90 - dev@nomis.dk",
+  "contributors": [
+    {
+      "name": "Simon Petersen",
+      "email": "dev@nomis.dk"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/sp90/prototype-builder/issues"
+  },
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sp90/prototype-builder.git"
+  },
   "scripts": {
     "start": "node server.js",
     "docker-start": "docker run -p 80:80 -v $PWD/dist:/var/www --rm --name=prototype prototype"
@@ -18,18 +32,20 @@
     "gulp-babel": "^6.1.0",
     "gulp-bump": "^0.3.1",
     "gulp-concat": "^2.5.2",
-    "gulp-jscs": "^3.0.2",
-    "gulp-livereload": "^3.8.1",
-    "gulp-sass": "^2.0.1",
-    "gulp-server-livereload": "^1.7.1",
-    "gulp-uncss": "^1.0.4",
     "gulp-cssnano": "^2.1.2",
     "gulp-if": "^2.0.1",
+    "gulp-jscs": "^3.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-ngdocs": "^0.2.13",
     "gulp-replace": "^0.5.4",
     "gulp-rev": "^7.0.0",
     "gulp-rev-replace": "^0.4.3",
+    "gulp-sass": "^2.0.1",
+    "gulp-sass-lint": "^1.1.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
+    "gulp-uncss": "^1.0.4",
+    "js-yaml": "^3.6.1",
     "karma": "^0.13.21",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.2.2",
