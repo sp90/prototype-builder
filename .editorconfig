@@ -8,14 +8,15 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+
 [*.md]
 trim_trailing_whitespace = false
 
 # Due to when using install it auto indents 2 spaces
-[bower.json]
+[*.json]
 indent_style = space
 indent_size = 2
 
-[package.json]
+[*.scss]
 indent_style = space
 indent_size = 2
