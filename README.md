@@ -91,6 +91,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 * Contribution guide
 * Move guides and more to wiki
 * Build a yoman generator for angular components
+* Rewrite starting app to be a simple hello world application with only nesseary content
 
 Best regards
 
