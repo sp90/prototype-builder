@@ -1,11 +1,12 @@
 input {
-	width: 100%;
-	font-size: $font--size-base;
-	font-family: $font-family--base;
-	padding: 20px 0;
-	border: none;
-	margin: 0 0 $spacing--base;
-	&:focus {
-		outline: none;
-	}
+  border: 0;
+  font-family: $font-family--base;
+  font-size: $font--size-base;
+  margin: 0 0 $spacing--base;
+  padding: 20px 0;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
 }

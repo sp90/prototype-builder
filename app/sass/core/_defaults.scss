@@ -1,55 +1,65 @@
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	background: #fff;
-	font-size: $font--size-base;
-	line-height: $font--line-base;
-	font-family: $font-family--base;
-	@media (max-width: 768px) {
-		font-size: 14px;
-		line-height: 20px;
-	}
+  $bg: #fff;
+
+  background: $bg;
+  font-family: $font-family--base;
+  font-size: $font--size-base;
+  line-height: $font--line-base;
+  margin: 0;
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4 {
-	font-family: $font-family--header;
-	margin: $spacing--base 0 ($spacing--base / 2);
-	line-height: 1.2em;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  font-family: $font-family--header;
+  margin: $spacing--base 0 ($spacing--base / 2);
+  line-height: 1.2em;
 }
 
-h1, .h1 {
-	font-weight: 200;
-	font-size: 32px;
-	@media (max-width: 768px) {
-		font-size: 24px;
-	}
+h1,
+.h1 {
+  font-weight: 200;
+  font-size: 32px;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 }
 
-h2, .h2 {
-	font-weight: 600;
-	font-size: 28px;
-	@media (max-width: 768px) {
-		font-size: 20px;
-	}
+h2,
+.h2 {
+  font-weight: 600;
+  font-size: 28px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 }
 
-h3, .h3 {
-	font-weight: 600;
+h3,
+.h3 {
+  font-weight: 600;
 }
 
-h4, .h4 {
-	font-weight: 600;
+h4,
+.h4 {
+  font-weight: 600;
 }
 
 p {
-	margin: 0 0 ($spacing--base * 2);
-	@media (max-width: 768px) {
-		margin: 0 0 $spacing--base;
-	}
+  margin: 0 0 ($spacing--base * 2);
+  @media (max-width: 768px) {
+    margin: 0 0 $spacing--base;
+  }
 }

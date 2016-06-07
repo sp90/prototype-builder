@@ -1,26 +1,31 @@
 article {
-	margin-bottom: ($spacing--base * 2);
+  margin-bottom: ($spacing--base * 2);
 
-	h2 {
-		color: $color--primary;
-		text-transform: capitalize;
-	}
-	.profile-image {
-		width: 100%;
-		height: 100%;
-		background-size: cover;
-		background-position: center center;
-		max-width: 350px;
-		max-height: 350px;
-		float: left;
-		margin: 0 20px 20px 0;
-		@media (max-width: 768px) {
-			float: none;
-		}
-	}
+  h2 {
+    color: $color--primary;
+    text-transform: capitalize;
+  }
+
+  .profile-image {
+    background-position: center center;
+    background-size: cover;
+    float: left;
+    height: 100%;
+    margin: 0 20px 20px 0;
+    max-height: 350px;
+    max-width: 350px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      float: none;
+    }
+  }
 }
+
 .article__fallback h3 {
-	text-align: center;
-	color: #aaa;
-	font-weight: 400;
+  $color: #aaa;
+
+  text-align: center;
+  color: $color;
+  font-weight: 400;
 }

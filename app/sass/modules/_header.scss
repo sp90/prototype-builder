@@ -1,10 +1,12 @@
 header {
-	background: $color--header-bg;
-	color: #fff;
-	padding: 20px;
+  $color: #fff;
 
-	h1 {
-		margin: 0;
-		text-transform: uppercase;
-	}
+  background: $color--header-bg;
+  color: $color;
+  padding: 20px;
+
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+  }
 }
