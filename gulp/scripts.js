@@ -1,3 +1,6 @@
+// Import native modules
+var path = require('path');
+
 // Import modules
 var del = require('del');
 var concat = require('gulp-concat');
