@@ -8,6 +8,9 @@ var config = require('./gulp/_config');
 var bumpType = [argv.bump] || ['build'];
 var port = argv.p || 8000;
 
+// If your not using s3 set this to false to improve build speed
+var useS3 = false;
+
 /**
  *	Include gulp tasks
  */
@@ -63,6 +66,14 @@ require('./gulp/scripts')(gulp, livereload);
  */
 require('./gulp/revReplace')(gulp);
 
+/**
+ *  Copy to S3
+ *
+ *  Tasks:
+ *    - copyToS3
+ */
+require('./gulp/cdn-s3')(gulp, useS3);
+
 
 /**
  *  Setup primary tasks
@@ -72,7 +83,7 @@ require('./gulp/revReplace')(gulp);
 gulp.task('default', gulp.series('clean-dist', gulp.parallel('sass-lint', 'sass', 'libs', 'script-lint', 'scripts', 'html', 'images', 'assets')));
 
 // Build for deployment
-gulp.task('deploy', gulp.series('clean-dist', 'html', gulp.parallel('sass', 'libs', 'scripts', 'images', 'assets'), 'html--deploy', 'rev', 'rev-replace', 'clean-html-tmp'));
+gulp.task('deploy', gulp.series('clean-dist', 'html', gulp.parallel('sass', 'libs', 'scripts', 'images', 'assets'), 'html--deploy', 'rev', 'rev-replace', 'clean-html-tmp', 'copyToS3'));
 
 // Watch files for changes and run tasks
 gulp.task('watch', gulp.series('default', function () {
