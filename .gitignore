@@ -4,6 +4,9 @@
 .idea/
 *.log
 .DS_Store
+.aws-keys.js
+.aws-conf.js
+.awspublish-*
 
 
 # Sublime specific files
