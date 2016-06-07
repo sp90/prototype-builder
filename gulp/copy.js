@@ -1,6 +1,6 @@
 // Import config
 var config = require('./_config');
-var clean = require('gulp-clean');
+var del = require('del');
 var critical = require('critical').stream;
 
 // Html module
@@ -28,7 +28,10 @@ module.exports = function(gulp, livereload) {
 	});
 
 	gulp.task('clean-html-tmp', function () {
-		return gulp.src('dist/tmp-**', {read: false})
-			.pipe(clean());
+		return del(['dist/tmp-**']);
+	});
+
+	gulp.task('clean-dist', function () {
+		return del(['dist/**']);
 	});
 };
