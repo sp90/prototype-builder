@@ -106,6 +106,10 @@ This is build to develop small applications, so its a step between codepen.io, a
 * Contribution guide
 * Move guides and more to wiki
 
+### Known issues
+
+* Revreplace on assets/fixtures.{json}
+
 Best regards
 
 **Nomis**
