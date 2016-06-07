@@ -12,7 +12,7 @@
 	<article ng-if="filteredRomans.length > 0" ng-repeat="roman in filteredRomans = (rome.romans | filter:search)">
 		<div
 			class="profile-image"
-			style="background-image: url(/assets/{{ roman.img }});">
+			style="background-image: url(/images/{{ roman.img }});">
 		</div>
 		<h2>{{roman.name}}</h2>
 		<h4>
