@@ -1,5 +1,6 @@
 module.exports = {
 	output: 'dist/*',
+	cssLibs: [],
 	sass: [
 		'app/sass/**/*.scss'
 	],
