@@ -51,7 +51,7 @@ describe('Roman filter', function() {
 
 			expect(result).to.equal('MMCDXLIV');
 		});
-	})
+	});
 
 	/**
 	 *	Deromanize

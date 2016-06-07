@@ -1,6 +1,6 @@
 {
   "name": "prototype-boilerplate",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow",
   "main": "gulpfile.js",
   "homepage": "http://prototype-builder.nomis.dk/",
@@ -20,10 +20,12 @@
     "url": "https://github.com/sp90/prototype-builder.git"
   },
   "scripts": {
+    "testing": "./node_modules/karma/bin/karma start karma-conf.js --auto-watch",
     "start": "node server.js",
     "docker-start": "docker run -p 80:80 -v $PWD/dist:/var/www --rm --name=prototype prototype"
   },
   "devDependencies": {
+    "babel-polyfill": "^6.9.1",
     "chai": "^3.5.0",
     "critical": "^0.6.0",
     "del": "^2.2.0",
@@ -49,9 +51,10 @@
     "js-yaml": "^3.6.1",
     "karma": "^0.13.21",
     "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^0.2.2",
     "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
     "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.7",
     "yargs": "^3.10.0"
   },
   "dependencies": {

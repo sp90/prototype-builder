@@ -3,6 +3,10 @@
 
 module.exports = function(config) {
 	var filesConfig = require('./gulp/_config');
+	var files = filesConfig.libs
+					.concat(filesConfig.testLibs)
+					.concat(filesConfig.scripts)
+					.concat(filesConfig.html);
 
 	config.set({
 		// base path that will be used to resolve all patterns (eg. files, exclude)
@@ -17,26 +21,14 @@ module.exports = function(config) {
 
 		plugins: [
 			'karma-chrome-launcher',
+			'karma-phantomjs-launcher',
 			'karma-mocha',
 			'karma-chai',
 			'karma-ng-html2js-preprocessor'
 		],
 
 		// list of files / patterns to load in the browser
-		files: [
-			'app/vendor/angular/angular.js',
-			'app/vendor/angular-ui-router/release/angular-ui-router.js',
-
-			'app/vendor/angular-mocks/angular-mocks.js',
-
-			'app/js/app.js',
-			'app/js/services/*.js',
-			'app/js/filters/*.js',
-			'app/js/directives/*.js',
-			'app/js/controllers/*.js',
-
-			'app/html/**/*'
-		],
+		files: files,
 
 		// list of files to exclude
 		exclude: [],
@@ -77,7 +69,7 @@ module.exports = function(config) {
 		// start these browsers
 		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
 		browsers: [
-			'Chrome'
+			'PhantomJS'
 		],
 
 		// Continuous Integration mode
@@ -86,6 +78,11 @@ module.exports = function(config) {
 
 		// Concurrency level
 		// how many browser should be started simultanous
-		concurrency: Infinity
+		concurrency: Infinity,
+
+		phantomjsLauncher: {
+			// Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
+			exitOnResourceError: true
+		}
 	});
-}
+};

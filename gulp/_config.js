@@ -31,5 +31,9 @@ module.exports = {
 	docLibs: [
 		'app/vendor/angular-animate/angular-animate.js',
 		'app/vendor/marked/marked.min.js'
+	],
+	testLibs: [
+		'app/vendor/angular-mocks/angular-mocks.js',
+		'node_modules/babel-polyfill/dist/polyfill.js'
 	]
 };
