@@ -100,7 +100,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 ### Next up Todo's
 
 * Remove bower as a dependency
-* Rewrite starting app to be a simple hello world application with only nesseary content (ES6/TYPESCRIPT/NG2)
+* Rewrite starting app to be a simple hello world application with only nesseary content (ES6/Typescript/NG2/React)
 * Default seo support
 * Build a yoman generator for angular components
 * Add a change log
