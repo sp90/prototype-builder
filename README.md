@@ -1,3 +1,9 @@
+# Announcement
+
+I've just reasonly been looking for the right framework - this project is getting **abandonned**. Because im going to work on a version of this that plugs seamlessly with Polymer CLI, polyfill'ish framework based on the native webcomponent spec.
+
+More info on this project as soon as i have a base structure for it
+
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Prototype-builder v2.1.5
