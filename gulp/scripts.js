@@ -11,6 +11,7 @@ var uglify = require('gulp-uglify');
 var replace = require('gulp-replace');
 var gulpDocs = require('gulp-ngdocs');
 var sourcemaps = require('gulp-sourcemaps');
+var ngAnnotate = require('gulp-ng-annotate');
 
 // Import config
 var config = require('./_config');
@@ -29,6 +30,7 @@ module.exports = function(gulp, livereload) {
 		return gulp.src(scripts)
 			.pipe(gulpif(live, sourcemaps.init()))
 			.pipe(concat('app.js', concatConf))
+			.pipe(ngAnnotate())
 			.pipe(gulpif(live, uglify()))
 			.pipe(gulpif(live, sourcemaps.write('./')))
 			.pipe(gulpif(live, replace(/\/\/# sourceMappingURL=.*$/g, '')))
