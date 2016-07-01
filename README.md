@@ -121,6 +121,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 ### Next up Todo's
 
+* Add a project based CLI
 * Move angular, to external CDN with fallback
 * Rewrite starting app to be a simple hello world application with only nesseary content NG1 in ES6
 * Default seo support
