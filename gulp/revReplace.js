@@ -1,4 +1,5 @@
 var rev = require('gulp-rev');
+var imagemin = require('gulp-imagemin');
 var revReplace = require('gulp-rev-replace');
 var revdel = require('gulp-rev-delete-original');
 
@@ -16,11 +17,12 @@ module.exports = function(gulp, useS3) {
 	// Build rev files
 	gulp.task('rev', function() {
 		return gulp.src([
-				'dist/**/*.{css,js,json,html,jpg,gif,png,svg,ico}',
+				'dist/**/*.{css,js,json,html,jpg,gif,png,svg,ico,map}',
 				'!dist/index.html'
 			])
 			.pipe(rev())
 			.pipe(revdel())
+			.pipe(imagemin())
 			.pipe(gulp.dest('dist'))
 			.pipe(rev.manifest())
 			.pipe(gulp.dest('dist'));
@@ -38,7 +40,7 @@ module.exports = function(gulp, useS3) {
 		}
 
 		return gulp.src([
-				'dist/**/*.{html,js,css}'
+				'dist/**/*.{html,js,css,json}'
 			])
 			.pipe(revReplace(replaceOptions))
 			.pipe(gulp.dest('dist'));

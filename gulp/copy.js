@@ -1,8 +1,9 @@
+// External modules
+var del = require('del');
+var critical = require('critical').stream;
+
 // Import config
 var config = require('./_config');
-var del = require('del');
-var imagemin = require('gulp-imagemin');
-var critical = require('critical').stream;
 
 // Html module
 module.exports = function(gulp, livereload) {
@@ -24,7 +25,6 @@ module.exports = function(gulp, livereload) {
 
 	gulp.task('images', function() {
 		return gulp.src(config.images)
-			.pipe(imagemin())
 			.pipe(gulp.dest('dist/images'))
 			.pipe(livereload());
 	});
