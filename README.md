@@ -1,12 +1,8 @@
-# Announcement
-
-I've just reasonly been looking for the right framework - this project is getting **abandonned**. Because im going to work on a version of this that plugs seamlessly with Polymer CLI, polyfill'ish framework based on the native webcomponent spec.
-
-More info on this project as soon as i have a base structure for it
-
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v2.1.5
+# Prototype-builder v3.0.0
+
+Just updated to 3.0.0, this is due to breaking changes, done with reformatting the application structure - im now working on rewriting all this in ES6 aswell
 
 This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow
 
@@ -30,9 +26,6 @@ This is build to develop small applications, so its a step between codepen.io, a
 	
 	// Install project files
 	npm install
-
-	// Get third party libs
-	bower install
 ```
 
 **Build, and watch**
@@ -46,12 +39,31 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 	// Watch for changes
 	gulp watch
+
+	// Deploy for revReplace, and aws (remember aws keys and conf setup)
+	gulp deploy
+
+	// Deploy for minifying scripts on deploy (envs can be: prod || staging)
+	NODE_ENV=prod gulp deploy
 ```
 
 ### Test your code
 
 ```
 	npm test
+```
+
+### Project CLI - (COMMING SOON)
+
+```
+	// It's going to look similar to this
+
+	npm run add:controller COMPNAME | npm run add:ctrl COMPNAME
+	npm run add:component COMPNAME | npm run add:comp COMPNAME
+	npm run add:service COMPNAME | npm run add:ser COMPNAME
+	npm run add:factory COMPNAME | npm run add:fac COMPNAME
+	npm run add:fixture COMPNAME | npm run add:fix COMPNAME
+	npm run add:filter COMPNAME | npm run add:fil COMPNAME
 ```
 
 
@@ -71,6 +83,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 	* Cache busting
 	* Linting
 	* Uglify
+	* NgAnnotate
 	* Sourcemaps
 	* Documentation - ngdocs
 		* Clean docs folder on build
@@ -92,30 +105,33 @@ This is build to develop small applications, so its a step between codepen.io, a
 		* ico
 		* png
 		* svg
+		* map
 	* Url replacement in following types
 		* html
 		* css
 		* js
+* Critical css (Manually styleable)
 * Support move assets to s3 bucket
 * Clean dist on build
 * Image minification
 * Support for vendor css files
 * Dynamicly get libs for karma config
 * Enviroment based build processes available: (prod, stag, dev) - default "dev"
+* Component based structure
 
 ### Next up Todo's
 
-* Remove bower as a dependency
-* Rewrite starting app to be a simple hello world application with only nesseary content (ES6/Typescript/NG2/React)
+* Move angular, to external CDN with fallback
+* Rewrite starting app to be a simple hello world application with only nesseary content NG1 in ES6
 * Default seo support
-* Build a yoman generator for angular components
+* Build a yeoman generator or npm cli for angular components
 * Add a change log
 * Contribution guide
 * Move guides and more to wiki
 
 ### Known issues
 
-* Revreplace on assets/fixtures.{json}
+* RevReplace in fixtures/*.{json}
 
 Best regards
 
