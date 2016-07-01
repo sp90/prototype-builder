@@ -35,6 +35,12 @@ module.exports = function(gulp, livereload) {
 			.pipe(livereload());
 	});
 
+	gulp.task('fixtures', function() {
+		return gulp.src(config.fixtures)
+			.pipe(gulp.dest('dist/fixtures'))
+			.pipe(livereload());
+	});
+
 	gulp.task('clean-html-tmp', function () {
 		return del(['dist/tmp-**']);
 	});
