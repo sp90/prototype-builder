@@ -11,8 +11,8 @@ var port = process.env.PORT || 3000;
 
 app.use(compression());
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '/dist')));
-app.use('/docs/', express.static(path.join(__dirname, '/docs')));
+app.use(express.static(path.join(__dirname, '/dist'), { maxAge: 86400000 }));
+app.use('/docs/', express.static(path.join(__dirname, '/docs'), { maxAge: 86400000 }));
 
 app.all('/docs/*', function(req, res) {
 	return res.sendFile(path.join(__dirname, '/docs/index.html'));
