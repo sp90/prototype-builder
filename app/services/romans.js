@@ -12,7 +12,7 @@
 				return $q(function(resolve, reject) {
 					$http({
 						method: 'GET',
-						url: '/assets/data/roman-data.json',
+						url: '/fixtures/roman-data.json',
 						cache: true
 					})
 					.success(function(data) {

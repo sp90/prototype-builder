@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  $bg: #fff;
+
+  background: $bg;
+  font-family: $font-family--base;
+  font-size: $font--size-base;
+  line-height: $font--line-base;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+header {
+  $color: #fff;
+
+  background: $color--header-bg;
+  color: $color;
+  padding: 20px;
+
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+section {
+  max-width: 980px;
+  margin: $spacing--base auto;
+  padding: 0 20px;
+}
+
+article {
+  margin-bottom: ($spacing--base * 2);
+
+  h2 {
+    color: $color--primary;
+    text-transform: capitalize;
+  }
+
+  .profile-image {
+    background-position: center center;
+    background-size: cover;
+    float: left;
+    height: 100%;
+    margin: 0 20px 20px 0;
+    max-height: 350px;
+    max-width: 350px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      float: none;
+    }
+  }
+}
+
+.article__fallback h3 {
+  $color: #aaa;
+
+  text-align: center;
+  color: $color;
+  font-weight: 400;
+}

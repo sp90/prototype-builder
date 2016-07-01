@@ -1,21 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  $bg: #fff;
-
-  background: $bg;
-  font-family: $font-family--base;
-  font-size: $font--size-base;
-  line-height: $font--line-base;
-  margin: 0;
-  @media (max-width: 768px) {
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
-
 h1,
 .h1,
 h2,

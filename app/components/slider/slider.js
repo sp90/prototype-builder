@@ -8,7 +8,7 @@
 	function slider() {
 		return {
 			restrict: 'E', // only activate on element attribute
-			templateUrl: '/partials/modules/slider.html',
+			templateUrl: '/components/slider/slider.html',
 			scope: {
 				content: '='
 			},

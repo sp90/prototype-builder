@@ -2,9 +2,6 @@
 	// No strict because of babel.js
 
 	var modules = [
-		// Angular native modules
-		'ngSanitize',
-
 		// Third party
 		'ui.router',
 
@@ -17,9 +14,6 @@
 		.module('app', modules)
 		.config(Config);
 
-	// Inject dependencies
-	Config.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider', '$sceDelegateProvider'];
-
 	// Config app
 	function Config($locationProvider, $stateProvider, $urlRouterProvider, $sceDelegateProvider) {
 		$locationProvider.html5Mode(true);
@@ -27,13 +21,13 @@
 		$stateProvider
 			.state('rome', {
 				url: '/',
-				templateUrl: '/partials/rome.html',
+				templateUrl: '/controllers/rome/rome.html',
 				controller: 'RomeController',
 				controllerAs: 'rome'
 			})
 			.state('cv', {
 				url: '/cv',
-				templateUrl: '/partials/cv.html',
+				templateUrl: '/controllers/cv/cv.html',
 				controller: 'CvController',
 				controllerAs: 'cv'
 			});

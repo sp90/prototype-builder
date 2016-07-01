@@ -2,10 +2,11 @@ module.exports = {
 	output: 'dist/*',
 	cssLibs: [],
 	sass: [
-		'app/sass/**/*.scss'
+		'app/**/*.scss'
 	],
 	html: [
-		'app/html/**/*.html'
+		'app/index.html',
+		'app/**/*.html'
 	],
 	images: [
 		'app/images/**/*.{jpg,gif,png,svg,ico}'
@@ -13,28 +14,32 @@ module.exports = {
 	assets: [
 		'app/assets/**/*'
 	],
+	fixtures: [
+		'app/fixtures/**/*'
+	],
 	scripts: [
-		'app/js/app.js',
-		'app/js/services/*.js',
-		'app/js/filters/*.js',
-		'app/js/directives/*.js',
-		'app/js/controllers/*.js'
+		'app/app.js',
+		'app/services/**/*.js',
+		'app/filters/**/*.js',
+		'app/components/**/*.js',
+		'app/controllers/**/*.js'
 	],
 	scriptsSkip: [
-		'!app/js/**/*.test.js',
-		'!app/js/**/*.mock.js'
+		'!app/**/*.test.js',
+		'!app/**/*.mock.js'
 	],
 	libs: [
-		'app/vendor/angular/angular.js',
-		'app/vendor/angular-sanitize/angular-sanitize.js',
-		'app/vendor/angular-ui-router/release/angular-ui-router.js'
+	    'node_modules/fg-loadcss/src/loadCSS.js',
+	    'node_modules/fg-loadcss/src/cssrelpreload.js',
+		'node_modules/angular/angular.min.js',
+		'node_modules/angular-ui-router/release/angular-ui-router.min.js'
 	],
 	docLibs: [
-		'app/vendor/angular-animate/angular-animate.js',
-		'app/vendor/marked/marked.min.js'
+		'node_modules/angular-animate/angular-animate.js',
+		'node_modules/marked/lib/marked.js'
 	],
 	testLibs: [
-		'app/vendor/angular-mocks/angular-mocks.js',
-		'node_modules/babel-polyfill/dist/polyfill.js'
+		'node_modules/angular-mocks/angular-mocks.js',
+		'node_modules/babel-polyfill/dist/polyfill.min.js'
 	]
 };

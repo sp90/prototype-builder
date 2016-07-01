@@ -11,8 +11,6 @@
 		.module('controller.rome', modules)
 		.controller('RomeController', RomeController);
 
-	RomeController.$inject = ['$scope', '$filter', 'Romans'];
-
 	function RomeController($scope, $filter, Romans) {
 		var rome = this;
 
@@ -20,10 +18,10 @@
 			title: '10 most famous people from acient rome',
 			romans: [],
 			sliderContent: [
-				'commodus.jpg',
-				'tiberius-gracchus.jpg',
-				'julius-caesar.jpg',
-				'augustus.jpg'
+				'/images/commodus.jpg',
+				'/images/tiberius-gracchus.jpg',
+				'/images/julius-caesar.jpg',
+				'/images/augustus.jpg'
 			]
 		});
 

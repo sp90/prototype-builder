@@ -1,0 +1,13 @@
+/**
+ *	Main app scss
+ */
+
+// Settings
+@import 'sass/variables';
+
+// Components - controllers
+@import 'controllers/cv/cv';
+@import 'controllers/rome/rome';
+
+// Components - directives
+@import 'components/slider/slider';

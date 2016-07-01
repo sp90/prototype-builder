@@ -9,19 +9,11 @@
 		.module('controller.cv', modules)
 		.controller('CvController', CvController);
 
-	CvController.$inject = ['$scope'];
-
 	function CvController($scope) {
 		var rome = this;
 
 		angular.extend(rome, {
-			title: 'Noget med CV',
-			sliderContent: [
-				'commodus.jpg',
-				'tiberius-gracchus.jpg',
-				'julius-caesar.jpg',
-				'augustus.jpg'
-			]
+			title: 'Noget med CV'
 		});
 	}
 })();
