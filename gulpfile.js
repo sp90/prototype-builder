@@ -80,19 +80,19 @@ require('./gulp/cdn-s3')(gulp, useS3);
  */
 
 // Default build
-gulp.task('default', gulp.series('clean-dist', gulp.parallel('sass-lint', 'sass', 'libs', 'script-lint', 'scripts', 'html', 'images', 'assets')));
+gulp.task('default', gulp.series('clean-dist', gulp.parallel('sass-lint', 'sass', 'libs', 'script-lint', 'scripts', 'html', 'images', 'assets', 'fixtures')));
 
 // Build for deployment
-gulp.task('deploy', gulp.series('clean-dist', 'html', gulp.parallel('sass', 'libs', 'scripts', 'images', 'assets'), 'html--deploy', 'rev', 'rev-replace', 'clean-html-tmp', 'copyToS3'));
+gulp.task('deploy', gulp.series('clean-dist', 'html', gulp.parallel('sass', 'libs', 'scripts', 'images', 'assets', 'fixtures'), 'html--deploy', 'clean-html-tmp', 'rev', 'rev-replace', 'copyToS3'));
 
 // Watch files for changes and run tasks
 gulp.task('watch', gulp.series('default', function () {
 	livereload.listen();
 
-	gulp.watch(config.sass, gulp.parallel('sass', 'sass-lint'));
 	gulp.watch(config.libs, gulp.parallel('libs'));
-	gulp.watch(config.scripts, gulp.parallel('scripts', 'script-lint'));
-	gulp.watch(config.html, gulp.parallel('html', 'clean-html-tmp'));
 	gulp.watch(config.images, gulp.parallel('images'));
 	gulp.watch(config.assets, gulp.parallel('assets'));
+	gulp.watch(config.sass, gulp.parallel('sass', 'sass-lint'));
+	gulp.watch(config.html, gulp.parallel('html', 'clean-html-tmp'));
+	gulp.watch(config.scripts, gulp.parallel('scripts', 'script-lint'));
 }));
