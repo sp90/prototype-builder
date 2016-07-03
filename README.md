@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v3.0.0
+# Prototype-builder v3.1.0
 
 Just updated to 3.0.0, this is due to breaking changes, done with reformatting the application structure - im now working on rewriting all this in ES6 aswell
 
@@ -53,17 +53,17 @@ This is build to develop small applications, so its a step between codepen.io, a
 	npm test
 ```
 
-### Project CLI - (COMMING SOON)
+### Project CLI
 
 ```
-	// It's going to look similar to this
-
-	npm run add:controller COMPNAME | npm run add:ctrl COMPNAME
-	npm run add:component COMPNAME | npm run add:comp COMPNAME
-	npm run add:service COMPNAME | npm run add:ser COMPNAME
-	npm run add:factory COMPNAME | npm run add:fac COMPNAME
-	npm run add:fixture COMPNAME | npm run add:fix COMPNAME
-	npm run add:filter COMPNAME | npm run add:fil COMPNAME
+	// These are used to generate modules
+	// Remember to add a name to the module
+	npm run add:controller MODULENAME | npm run add:con MODULENAME
+	npm run add:component MODULENAME | npm run add:com MODULENAME
+	npm run add:service MODULENAME | npm run add:ser MODULENAME
+	npm run add:factory MODULENAME | npm run add:fac MODULENAME
+	npm run add:constant MODULENAME | npm run add:con MODULENAME
+	npm run add:filter MODULENAME | npm run add:fil MODULENAME
 ```
 
 
@@ -118,10 +118,10 @@ This is build to develop small applications, so its a step between codepen.io, a
 * Dynamicly get libs for karma config
 * Enviroment based build processes available: (prod, stag, dev) - default "dev"
 * Component based structure
+* Project based CLI
 
 ### Next up Todo's
 
-* Add a project based CLI
 * Move angular, to external CDN with fallback
 * Rewrite starting app to be a simple hello world application with only nesseary content NG1 in ES6
 * Default seo support
