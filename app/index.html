@@ -27,6 +27,16 @@
 		<!-- Init view -->
 		<div class="main" ui-view></div>
 
+		<!-- Load angular from CDN -->
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+
+		<!-- Add fallback CDN if cdnjs is down -->
+		<script>
+			window.angular || document.write('<script src="https://code.angularjs.org/1.5.7/angular.min.js">\x3C/script>');
+		</script>
+
 		<!-- Embed scripts -->
 		<script type="text/javascript" src="/app-libs.js"></script>
 		<script type="text/javascript" src="/app.js"></script>

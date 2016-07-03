@@ -33,7 +33,6 @@ module.exports = {
 	libs: [
 	    'node_modules/fg-loadcss/src/loadCSS.js',
 	    'node_modules/fg-loadcss/src/cssrelpreload.js',
-		'node_modules/angular/angular.min.js',
 		'node_modules/angular-ui-router/release/angular-ui-router.min.js'
 	],
 	docLibs: [
