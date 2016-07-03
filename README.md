@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v3.1.0
+# Prototype-builder v3.1.1
 
 Just updated to 3.0.0, this is due to breaking changes, done with reformatting the application structure - im now working on rewriting all this in ES6 aswell
 
@@ -119,10 +119,10 @@ This is build to develop small applications, so its a step between codepen.io, a
 * Enviroment based build processes available: (prod, stag, dev) - default "dev"
 * Component based structure
 * Project based CLI
+* Angular loaded from external CDN
 
 ### Next up Todo's
 
-* Move angular, to external CDN with fallback
 * Rewrite starting app to be a simple hello world application with only nesseary content NG1 in ES6
 * Default seo support
 * Build a yeoman generator or npm cli for angular components
