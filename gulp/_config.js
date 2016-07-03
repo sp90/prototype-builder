@@ -22,6 +22,8 @@ module.exports = {
 		'app/services/**/*.js',
 		'app/filters/**/*.js',
 		'app/components/**/*.js',
+		'app/factories/**/*.js',
+		'app/constants/**/*.js',
 		'app/controllers/**/*.js'
 	],
 	scriptsSkip: [
