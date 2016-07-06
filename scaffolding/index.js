@@ -24,7 +24,8 @@ if (1 >= args.length) {
 var dataObj = {
 	name: args[1],
 	nameUpper: capitalizeFirstLetter(args[1]),
-	nameLower: args[1].toLowerCase()
+	nameLower: args[1].toLowerCase(),
+	nameSlugified: slugify(args[1])
 };
 
 // Setup based on config
@@ -111,4 +112,13 @@ function write(path, content, cb) {
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function slugify(text) {
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
 }
