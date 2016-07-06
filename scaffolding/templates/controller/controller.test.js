@@ -1,6 +1,5 @@
 // Some test here
 describe('{{nameUpper}} function', function() {
-
   describe('{{nameUpper}}', function() {
     var $scope;
 
@@ -8,6 +7,7 @@ describe('{{nameUpper}} function', function() {
 
     beforeEach(inject(function($rootScope, $controller) {
       $scope = $rootScope.$new();
+
       $controller('{{nameUpper}}', {
       	$scope: $scope
       });
