@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v3.1.1
+# Prototype-builder v3.1.2
 
 Just updated to 3.0.0, this is due to breaking changes, done with reformatting the application structure - im now working on rewriting all this in ES6 aswell
 
