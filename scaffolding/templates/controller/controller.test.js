@@ -1,20 +1,22 @@
-// Some test here
-describe('{{nameUpper}} function', function() {
-  describe('{{nameUpper}}', function() {
-    var $scope;
+(function() {
+	'use strict';
 
-    beforeEach(module('app'));
+	// Some test here
+	describe('{{nameUpper}} function', function() {
+		var $scope;
 
-    beforeEach(inject(function($rootScope, $controller) {
-      $scope = $rootScope.$new();
+		beforeEach(module('app'));
 
-      $controller('{{nameUpper}}', {
-      	$scope: $scope
-      });
-    }));
+		beforeEach(inject(function($rootScope, $controller) {
+			$scope = $rootScope.$new();
 
-    it('should create something', function() {
-      // Expect something
-    });
-  });
-});
+			$controller('{{nameUpper}}', {
+				$scope: $scope
+			});
+		}));
+
+		it('should create something', function() {
+			// Expect something
+		});
+	});
+})();
