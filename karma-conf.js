@@ -3,8 +3,8 @@
 
 module.exports = function(config) {
 	var filesConfig = require('./gulp/_config');
-	var files = filesConfig.libs
-					.concat(filesConfig.testLibs)
+	var files = filesConfig.testLibs
+					.concat(filesConfig.libs)
 					.concat(filesConfig.scripts)
 					.concat(filesConfig.html);
 
@@ -39,7 +39,7 @@ module.exports = function(config) {
 		},
 
 		ngHtml2JsPreprocessor: {
-			stripPrefix: 'app/',
+			stripPrefix: 'app',
 			moduleName: function (htmlPath, originalPath) {
 				return htmlPath;
 			}

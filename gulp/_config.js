@@ -40,6 +40,7 @@ module.exports = {
 		'node_modules/marked/lib/marked.js'
 	],
 	testLibs: [
+		'node_modules/angular/angular.min.js',
 		'node_modules/angular-mocks/angular-mocks.js',
 		'node_modules/babel-polyfill/dist/polyfill.min.js'
 	]
