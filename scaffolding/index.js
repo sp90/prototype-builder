@@ -39,6 +39,18 @@ var module = config.modules.filter(function (obj) {
 
 build(module, function(filesPath, outputPath) {
 	var arrLength = filesPath.length;
+	var moduleDirName = type === 'constant' ? path.join(__dirname, '../', outputPath) : path.join(__dirname, '../', outputPath, dataObj.name);
+
+	if (!fs.existsSync(moduleDirName) && type !== 'constant'){
+	    fs.mkdirSync(moduleDirName);
+	} else if (type !== 'constant') {
+		console.log(chalk.red('The module with that name already exists'));
+		console.log(chalk.red('Please select another one'));
+		console.log('-------------------------------');
+		console.log(chalk.yellow.bold('FolderPath'));
+		console.log(chalk.yellow(moduleDirName));
+		return;
+	}
 
 	_.map(filesPath, function(filePath, i) {
 		var pathParts = filePath.split('/');
@@ -47,13 +59,17 @@ build(module, function(filesPath, outputPath) {
 		var resultEnding = pathEnding.substring(n);
 
 		read(filePath, function(fileContent) {
-			var moduleDirName = type === 'constant' ? path.join(__dirname, '../', outputPath) : path.join(__dirname, '../', outputPath, dataObj.name);
 			var setPath = resultEnding === '.scss' ?  path.join(moduleDirName, '_' + dataObj.name + resultEnding) : path.join(moduleDirName, dataObj.name + resultEnding);
 
-			if (!fs.existsSync(moduleDirName) && type !== 'constant'){
-			    fs.mkdirSync(moduleDirName);
+			// Check if the file exists (should only be constants)
+			if (fs.existsSync(setPath)) {
+				console.log(chalk.red('A file with this name do already exist'));
+				console.log(chalk.red('Please select another one'));
+				console.log('-------------------------------');
+				console.log(chalk.yellow.bold('Filepath'));
+				console.log(chalk.yellow(setPath));
+			    return;
 			}
-
 
 			write(setPath, _.template(fileContent)(dataObj), function() {
 				// Only show logs on the finish of the last file
@@ -115,10 +131,5 @@ function capitalizeFirstLetter(string) {
 }
 
 function slugify(text) {
-  return text.toString().toLowerCase()
-    .replace(/\s+/g, '-')           // Replace spaces with -
-    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-    .replace(/^-+/, '')             // Trim - from start of text
-    .replace(/-+$/, '');            // Trim - from end of text
+    return text.replace( /([a-z])([A-Z])/g, '$1-$2' ).toLowerCase();
 }
