@@ -19,7 +19,8 @@
 			angular.extend(scope, {
 				sliderState: 0,
 				next: next,
-				prev: prev
+				prev: prev,
+				goTo: goTo
 			});
 
 			function prev() {
@@ -35,21 +36,27 @@
 			}
 
 			function next() {
-				if (scope.sliderState === scope.content.length - 1) {
+				if (scope.sliderState < scope.content.length - 1) {
 					angular.extend(scope, {
-						sliderState: 0
+						sliderState: scope.sliderState + 1
 					});
 				} else {
 					angular.extend(scope, {
-						sliderState: scope.sliderState + 1
+						sliderState: 0
 					});
 				}
 			}
 
 			function goTo($index) {
-				angular.extend(scope, {
-					sliderState: $index
-				});
+				if ($index < scope.content.length) {
+					angular.extend(scope, {
+						sliderState: $index
+					});
+				} else {
+					angular.extend(scope, {
+						sliderState: 0
+					});
+				}
 			}
 		}
 	}
