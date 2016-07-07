@@ -42,14 +42,11 @@ build(module, function(filesPath, outputPath) {
 	var moduleDirName = type === 'constant' ? path.join(__dirname, '../', outputPath) : path.join(__dirname, '../', outputPath, dataObj.name);
 
 	if (!fs.existsSync(moduleDirName) && type !== 'constant'){
+		// If i does not exists create it
 	    fs.mkdirSync(moduleDirName);
 	} else if (type !== 'constant') {
-		console.log(chalk.red('The module with that name already exists'));
-		console.log(chalk.red('Please select another one'));
-		console.log('-------------------------------');
-		console.log(chalk.yellow.bold('FolderPath'));
-		console.log(chalk.yellow(moduleDirName));
-		return;
+		// Close program
+		return moduleExists(moduleDirName);
 	}
 
 	_.map(filesPath, function(filePath, i) {
@@ -63,30 +60,14 @@ build(module, function(filesPath, outputPath) {
 
 			// Check if the file exists (should only be constants)
 			if (fs.existsSync(setPath)) {
-				console.log(chalk.red('A file with this name do already exist'));
-				console.log(chalk.red('Please select another one'));
-				console.log('-------------------------------');
-				console.log(chalk.yellow.bold('Filepath'));
-				console.log(chalk.yellow(setPath));
-			    return;
+				// Close program
+				return fileExsists(setPath);
 			}
 
 			write(setPath, _.template(fileContent)(dataObj), function() {
 				// Only show logs on the finish of the last file
 				if (arrLength - 1 === i) {
-					console.log(chalk.green('The new module has been created'));
-					console.log(chalk.bold.green('the module name is: ' + type + '.' + dataObj.name));
-					console.log('-------------------------------');
-
-					if (type === 'controller') {
-						console.log(chalk.yellow('Remember to bind the sass file in app.scss in the root application folder'));
-						console.log(chalk.yellow('And Bind your controller in app.js'));
-					} else if (type === 'component') {
-						console.log(chalk.yellow('Remember to bind the sass file in app.scss in the root application folder'));
-						console.log(chalk.yellow('And add this component as a dependency in the controller you need it'));
-					} else {
-						console.log(chalk.yellow('Remember to bind the dependency where ever you need this module'));
-					}
+					return moduleCreated();
 				}
 			});
 		});
@@ -132,4 +113,36 @@ function capitalizeFirstLetter(string) {
 
 function slugify(text) {
     return text.replace( /([a-z])([A-Z])/g, '$1-$2' ).toLowerCase();
+}
+
+function moduleExists(path) {
+	console.log(chalk.red('The module with that name already exists'));
+	console.log(chalk.red('Please select another one'));
+	console.log('-------------------------------');
+	console.log(chalk.yellow.bold('FolderPath'));
+	console.log(chalk.yellow(path));
+}
+
+function fileExsists(path) {
+	console.log(chalk.red('A file with this name do already exist'));
+	console.log(chalk.red('Please select another one'));
+	console.log('-------------------------------');
+	console.log(chalk.yellow.bold('Filepath'));
+	console.log(chalk.yellow(path));
+}
+
+function moduleCreated() {
+	console.log(chalk.green('The new module has been created'));
+	console.log(chalk.bold.green('the module name is: ' + type + '.' + dataObj.name));
+	console.log('-------------------------------');
+
+	if (type === 'controller') {
+		console.log(chalk.yellow('Remember to bind the sass file in app.scss in the root application folder'));
+		console.log(chalk.yellow('And Bind your controller in app.js'));
+	} else if (type === 'component') {
+		console.log(chalk.yellow('Remember to bind the sass file in app.scss in the root application folder'));
+		console.log(chalk.yellow('And add this component as a dependency in the controller you need it'));
+	} else {
+		console.log(chalk.yellow('Remember to bind the dependency where ever you need this module'));
+	}
 }
