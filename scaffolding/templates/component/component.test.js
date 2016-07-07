@@ -1,20 +1,34 @@
-describe('{{nameUpper}} component', function() {
-  var $compile,
-      $rootScope;
+(function() {
+	'use strict';
 
-  beforeEach(module('app'));
+	describe('{{nameUpper}} component', function() {
+		var $outerScope, $scope, element;
 
-  beforeEach(inject(function(_$compile_, _$rootScope_){
-    $compile = _$compile_;
-    $rootScope = _$rootScope_;
-  }));
+		beforeEach(module('app'));
+		beforeEach(module('/components/{{name}}/{{name}}.html'));
+		beforeEach(module('/components/{{name}}/{{name}}.fixture.html'));
 
-  it('should set some component', function() {
-    // Compile a piece of HTML containing the directive
-    var element = $compile("<{{nameSlugified}}></{{nameSlugified}}>")($rootScope);
-    // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
-    $rootScope.$digest();
-    // Check that the compiled element contains the templated content
-    //expect(element.html()).toContain("lidless, wreathed in flame, 2 times");
-  });
-});
+		beforeEach(inject(function($compile, $rootScope, $templateCache){
+			// Get fixture
+			var fixture = $templateCache.get('/components/{{name}}/{{name}}.fixture.html');
+			// Create scope
+			$outerScope = $rootScope.$new();
+			// Compile scope & fixture into the compiled element
+			element = $compile(angular.element(fixture))($outerScope);
+			// Init digest, to test before it has been given any data
+			$outerScope.$digest();
+		}));
+
+		it('should do something', function() {
+			// Do outerScope changes, and remember to digest after
+			// $outerScope.something = 'test';
+			// $outerScope.$digest();
+
+			// Html:
+			// element.html();
+
+			// Inner scope
+			// var $scope = element.isolateScope();
+		});
+	});
+})();

@@ -24,7 +24,7 @@ module.exports = {
 		{
 			type: 'component',
 			output: 'app/components/',
-			fileTypes: '{scss,js,html,test.js}'
+			fileTypes: '{scss,js,html,test.js,fixture.html}'
 		},
 		{
 			type: 'controller',
