@@ -23,6 +23,11 @@
     "test": "./node_modules/karma/bin/karma start karma-conf.js --auto-watch",
     "start": "node server.js",
     "docker-start": "docker run -p 80:80 -v $PWD/dist:/var/www --rm --name=prototype prototype",
+
+    "deploy:prod": "NODE_ENV=prod gulp deploy",
+    "deploy:stag": "NODE_ENV=stag gulp deploy",
+    "deploy:dev": "NODE_ENV=dev gulp deploy",
+
     "add:service": "node scaffolding/index.js service",
     "add:controller": "node scaffolding/index.js controller",
     "add:factory": "node scaffolding/index.js factory",
@@ -69,6 +74,7 @@
     "js-yaml": "^3.6.1",
     "karma": "^0.13.21",
     "karma-chai": "^0.1.0",
+    "karma-json-fixtures-preprocessor": "0.0.6",
     "karma-mocha": "^0.2.2",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.0",

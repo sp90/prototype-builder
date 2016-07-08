@@ -6,6 +6,7 @@ module.exports = function(config) {
 	var files = filesConfig.testLibs
 					.concat(filesConfig.libs)
 					.concat(filesConfig.scripts)
+					.concat(filesConfig.fixtures)
 					.concat(filesConfig.html);
 
 	config.set({
@@ -23,7 +24,8 @@ module.exports = function(config) {
 			'karma-phantomjs-launcher',
 			'karma-mocha',
 			'karma-chai',
-			'karma-ng-html2js-preprocessor'
+			'karma-ng-html2js-preprocessor',
+			'karma-json-fixtures-preprocessor'
 		],
 
 		// list of files / patterns to load in the browser
@@ -35,6 +37,7 @@ module.exports = function(config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
+			'app/**/*.json': 'json_fixtures',
 			'app/**/*.html': 'ng-html2js'
 		},
 
@@ -42,6 +45,14 @@ module.exports = function(config) {
 			stripPrefix: 'app',
 			moduleName: function (htmlPath, originalPath) {
 				return htmlPath;
+			}
+		},
+
+		jsonFixturesPreprocessor: {
+			stripPrefix: 'app',
+			variableName: '__fixtures__',
+			transformPath: function(path) {
+				return path + '.js';
 			}
 		},
 
