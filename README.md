@@ -41,7 +41,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 	gulp watch
 ```
 
-### Test your code
+**Test your code**
 
 ```
 	// Run tests
