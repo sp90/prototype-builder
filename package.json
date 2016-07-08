@@ -20,7 +20,8 @@
     "url": "https://github.com/sp90/prototype-builder.git"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma-conf.js --auto-watch",
+    "test": "./node_modules/karma/bin/karma start karma-conf.js",
+    "test:watch": "./node_modules/karma/bin/karma start karma-conf.js --auto-watch",
     "start": "node server.js",
     "docker-start": "docker run -p 80:80 -v $PWD/dist:/var/www --rm --name=prototype prototype",
 
