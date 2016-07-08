@@ -32,7 +32,8 @@ module.exports = function(gulp, useS3) {
 	gulp.task('rev-replace', function() {
 		var manifest = gulp.src('./dist/rev-manifest.json');
 		var replaceOptions = {
-			manifest: manifest
+			manifest: manifest,
+			replaceInExtensions: ['.js', '.css', '.html', '.hbs', '.json']
 		};
 
 		if (awsConf !== false) {
