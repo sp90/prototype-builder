@@ -4,11 +4,11 @@
 	describe('{{nameUpper}} component', function() {
 		var $outerScope, $scope, element;
 
-		beforeEach(module('app'));
+		beforeEach(module('directive.{{name}}'));
 		beforeEach(module('/components/{{name}}/{{name}}.html'));
 		beforeEach(module('/components/{{name}}/{{name}}.fixture.html'));
 
-		beforeEach(inject(function($compile, $rootScope, $templateCache){
+		beforeEach(inject(function($compile, $rootScope, $templateCache) {
 			// Get fixture
 			var fixture = $templateCache.get('/components/{{name}}/{{name}}.fixture.html');
 			// Create scope

@@ -4,17 +4,11 @@
 	describe('{{nameUpper}} factory', function () {
 		var factory;
 
-		beforeEach(function() {
-			module('factory.{{name}}');
+		beforeEach('factory.{{name}}'));
+		beforeEach(inject(function({{nameUpper}}) {
+			factory = {{nameUpper}};
+		}));
 
-			inject(function({{nameUpper}}) {
-				factory = {{nameUpper}};
-			});
-		});
-
-		/**
-		 *	Method
-		 */
 		describe('Method', function() {
 			it('Should define method', function() {
 				expect(factory.method).to.not.be.undefined;

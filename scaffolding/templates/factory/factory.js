@@ -2,14 +2,16 @@
 	'use strict';
 
 	angular
-		.module('service.{{name}}', [])
-		.factory('{{nameUpper}}', function() {
-			return {
-				method: method
-			};
+		.module('factory.{{name}}', [])
+		.factory('{{nameUpper}}', {{nameUpper}});
 
-			function method() {
+	function {{nameUpper}}() {
+		return {
+			method: method
+		};
 
-			}
-		});
+		function method() {
+
+		}
+	}
 })();

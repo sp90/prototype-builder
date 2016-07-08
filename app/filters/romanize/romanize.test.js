@@ -4,13 +4,10 @@
 describe('Roman filter', function() {
 	var $filter;
 
-	beforeEach(function() {
-		module('filter.romanize');
-
-		inject(function(_$filter_) {
-			$filter = _$filter_;
-		});
-	});
+	beforeEach(module('filter.romanize'));
+	beforeEach(inject(function(_$filter_) {
+		$filter = _$filter_;
+	}));
 
 	/**
 	 *	Romanize

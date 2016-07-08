@@ -4,11 +4,11 @@
 	describe('Slider component', function() {
 		var $outerScope, $scope, element;
 
-		beforeEach(module('app'));
+		beforeEach(module('directive.slider'));
 		beforeEach(module('/components/slider/slider.html'));
 		beforeEach(module('/components/slider/slider.fixture.html'));
 
-		beforeEach(inject(function($compile, $rootScope, $templateCache){
+		beforeEach(inject(function($compile, $rootScope, $templateCache) {
 			// Get fixture
 			var fixture = $templateCache.get('/components/slider/slider.fixture.html');
 			// Create scope
