@@ -1,0 +1,71 @@
+/**
+  * $bp-mega: 2500px;
+  * $bp-mega: 1900px;
+  * $bp-kilo: 1360px;
+  * $bp-centi: 1024px;
+  * $bp-milli: 768px;
+  * $bp-nano: 480px;
+  */
+
+$breakpoint-map: (
+  giga: (
+    $bp-giga
+  ),
+  mega: (
+    $bp-mega
+  ),
+  kilo: (
+    $bp-kilo
+  ),
+  centi: (
+    $bp-centi
+  ),
+  milli: (
+    $bp-milli
+  ),
+  nano: (
+    $bp-nano
+  )
+);
+
+@mixin breakpoint($point) {
+  @if length($point) > 1 {
+    @if type-of(nth($point, 1)) == 'number' and type-of(nth($point, 2)) == 'number' {
+      @media only screen and (min-width: nth($point, 1)) and (max-width: nth($point, 2)) {
+        @content;
+      }
+    } @else if type-of(nth($point, 1)) == 'number' {
+      @media only screen and (min-width: nth($point, 1)) and (max-width: map-get($breakpoint-map, nth($point, 2))) {
+        @content;
+      }
+    } @else if type-of(nth($point, 2)) == 'number' {
+      @media only screen and (min-width: map-get($breakpoint-map, nth($point, 1))) and (max-width: nth($point, 2)) {
+        @content;
+      }
+    } @else {
+      @media only screen and (min-width: map-get($breakpoint-map, nth($point, 1))) and (max-width: map-get($breakpoint-map, nth($point, 2))) {
+        @content;
+      }
+    }
+  } @else {
+    @if $point == giga {
+      @media only screen and (min-width: $bp-giga) { @content; }
+    } @else if $point == mega {
+      @media only screen and (min-width: $bp-mega) { @content; }
+    } @else if $point == kilo {
+      @media only screen and (min-width: $bp-kilo) { @content; }
+    } @else if $point == centi {
+      @media only screen and (min-width: $bp-centi) { @content; }
+    } @else if $point == milli {
+      @media only screen and (min-width: $bp-milli) { @content; }
+    } @else if $point == nano {
+      @media only screen and (min-width: $bp-nano) { @content; }
+    } @else if $point == print {
+      @media print { @content; }
+    } @else if type-of($point) == 'number' {
+      @media only screen and (min-width: $point) { @content; }
+    } @else if str-index($point, max) == 1 or str-index($point, min) == 1 {
+      @media only screen and (#{$point}) { @content; }
+    }
+  }
+}

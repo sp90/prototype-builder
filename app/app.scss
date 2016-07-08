@@ -5,6 +5,9 @@
 // Settings
 @import 'sass/variables';
 
+// Mixins
+@import 'sass/mixins/breakpoint';
+
 // Components - controllers
 @import 'controllers/cv/cv';
 @import 'controllers/rome/rome';
