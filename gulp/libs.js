@@ -7,7 +7,7 @@ var uglify = require('gulp-uglify');
 var config = require('./_config');
 
 var env = process.env.NODE_ENV || 'dev';
-var live = env === 'prod' || env === 'staging';
+var live = env === 'prod' || env === 'stag';
 
 // Html module
 module.exports = function(gulp, livereload) {
