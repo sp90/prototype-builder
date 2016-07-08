@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v3.1.2
+# Prototype-builder v3.2.0
 
 Just updated to 3.0.0, this is due to breaking changes, done with reformatting the application structure - im now working on rewriting all this in ES6 aswell
 
@@ -39,18 +39,16 @@ This is build to develop small applications, so its a step between codepen.io, a
 
 	// Watch for changes
 	gulp watch
-
-	// Deploy for revReplace, and aws (remember aws keys and conf setup)
-	gulp deploy
-
-	// Deploy for minifying scripts on deploy (envs can be: prod || staging)
-	NODE_ENV=prod gulp deploy
 ```
 
 ### Test your code
 
 ```
+	// Run tests
 	npm test
+	
+	// Run watch on tests
+	npm run test:watch
 ```
 
 ### Project CLI
@@ -64,6 +62,17 @@ This is build to develop small applications, so its a step between codepen.io, a
 	npm run add:factory MODULENAME | npm run add:fac MODULENAME
 	npm run add:constant MODULENAME | npm run add:con MODULENAME
 	npm run add:filter MODULENAME | npm run add:fil MODULENAME
+```
+
+### Deployment
+
+```
+	// These will build based on the enviroment you wanna build to
+	// Right now prod and staging is the same, you could change it for your project
+	// You need to set it up for s3 or just build it and serve in your project folder
+	npm run deploy:dev
+	npm run deploy:stag
+	npm run deploy:prod
 ```
 
 
@@ -120,19 +129,15 @@ This is build to develop small applications, so its a step between codepen.io, a
 * Component based structure
 * Project based CLI
 * Angular loaded from external CDN
+* RevReplace now also supported for json fixtures
 
 ### Next up Todo's
 
 * Rewrite starting app to be a simple hello world application with only nesseary content NG1 in ES6
 * Default seo support
-* Build a yeoman generator or npm cli for angular components
 * Add a change log
 * Contribution guide
 * Move guides and more to wiki
-
-### Known issues
-
-* RevReplace in fixtures/*.{json}
 
 Best regards
 
