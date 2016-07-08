@@ -12,7 +12,7 @@
 				return $q(function(resolve, reject) {
 					$http({
 						method: 'GET',
-						url: '/fixtures/data.json'
+						url: '/services/{{name}}/{{name}}.fixture.json'
 					})
 					.success(function(res) {
 						resolve(res.data);

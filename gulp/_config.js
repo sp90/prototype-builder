@@ -15,7 +15,7 @@ module.exports = {
 		'app/assets/**/*'
 	],
 	fixtures: [
-		'app/fixtures/**/*'
+		'app/**/*.json'
 	],
 	scripts: [
 		'app/app.js',

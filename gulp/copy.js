@@ -37,7 +37,7 @@ module.exports = function(gulp, livereload) {
 
 	gulp.task('fixtures', function() {
 		return gulp.src(config.fixtures)
-			.pipe(gulp.dest('dist/fixtures'))
+			.pipe(gulp.dest('dist'))
 			.pipe(livereload());
 	});
 

@@ -4,7 +4,7 @@ module.exports = {
 		{
 			type: 'service',
 			output: 'app/services/',
-			fileTypes: '{js,test.js}'
+			fileTypes: '{js,test.js,fixture.json}'
 		},
 		{
 			type: 'filter',
