@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/sp90/prototype-builder](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sp90/prototype-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-# Prototype-builder v3.2.1
+# Prototype-builder v3.2.2
 
 Just updated to 3.0.0, this is due to breaking changes, done with reformatting the application structure - im now working on rewriting all this in ES6 aswell
 
@@ -60,7 +60,7 @@ This is build to develop small applications, so its a step between codepen.io, a
 	npm run add:component MODULENAME | npm run add:com MODULENAME
 	npm run add:service MODULENAME | npm run add:ser MODULENAME
 	npm run add:factory MODULENAME | npm run add:fac MODULENAME
-	npm run add:constant MODULENAME | npm run add:con MODULENAME
+	npm run add:constant MODULENAME | npm run add:cons MODULENAME
 	npm run add:filter MODULENAME | npm run add:fil MODULENAME
 ```
 
