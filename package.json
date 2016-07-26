@@ -1,6 +1,6 @@
 {
   "name": "prototype-boilerplate",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "This is a prototype-boilerplate which is a good way to start small html prototypes for show. With build-in seamless workflow",
   "main": "gulpfile.js",
   "homepage": "http://prototype-builder.nomis.dk/",
@@ -36,7 +36,8 @@
     "add:constant": "node scaffolding/index.js constant",
     "add:component": "node scaffolding/index.js component",
     "add:ser": "node scaffolding/index.js service",
-    "add:con": "node scaffolding/index.js constant",
+    "add:con": "node scaffolding/index.js controller",
+    "add:cons": "node scaffolding/index.js constant",
     "add:fac": "node scaffolding/index.js factory",
     "add:fil": "node scaffolding/index.js filter",
     "add:com": "node scaffolding/index.js component"
