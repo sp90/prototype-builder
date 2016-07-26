@@ -22,7 +22,7 @@
       <p><a href="https://gitter.im/sp90/prototype-builder?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/sp90/prototype-builder"></a></p>
 
 <h1>
-<a id="prototype-builder-v300" class="anchor" href="#prototype-builder-v300" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prototype-builder v3.0.0</h1>
+<a id="prototype-builder-v321" class="anchor" href="#prototype-builder-v321" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prototype-builder v3.2.1</h1>
 
 <p>Just updated to 3.0.0, this is due to breaking changes, done with reformatting the application structure - im now working on rewriting all this in ES6 aswell</p>
 
@@ -61,31 +61,39 @@
 
     // Watch for changes
     gulp watch
+</code></pre>
 
-    // Deploy for revReplace, and aws (remember aws keys and conf setup)
-    gulp deploy
+<p><strong>Test your code</strong></p>
 
-    // Deploy for minifying scripts on deploy (envs can be: prod || staging)
-    NODE_ENV=prod gulp deploy
+<pre><code>    // Run tests
+    npm test
+
+    // Run watch on tests
+    npm run test:watch
 </code></pre>
 
 <h3>
-<a id="test-your-code" class="anchor" href="#test-your-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test your code</h3>
+<a id="project-cli" class="anchor" href="#project-cli" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project CLI</h3>
 
-<pre><code>    npm test
+<pre><code>    // These are used to generate modules
+    // Remember to add a name to the module
+    npm run add:controller MODULENAME | npm run add:con MODULENAME
+    npm run add:component MODULENAME | npm run add:com MODULENAME
+    npm run add:service MODULENAME | npm run add:ser MODULENAME
+    npm run add:factory MODULENAME | npm run add:fac MODULENAME
+    npm run add:constant MODULENAME | npm run add:con MODULENAME
+    npm run add:filter MODULENAME | npm run add:fil MODULENAME
 </code></pre>
 
 <h3>
-<a id="project-cli---comming-soon" class="anchor" href="#project-cli---comming-soon" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project CLI - (COMMING SOON)</h3>
+<a id="deployment" class="anchor" href="#deployment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deployment</h3>
 
-<pre><code>    // It's going to look similar to this
-
-    npm run add:controller COMPNAME | npm run add:ctrl COMPNAME
-    npm run add:component COMPNAME | npm run add:comp COMPNAME
-    npm run add:service COMPNAME | npm run add:ser COMPNAME
-    npm run add:factory COMPNAME | npm run add:fac COMPNAME
-    npm run add:fixture COMPNAME | npm run add:fix COMPNAME
-    npm run add:filter COMPNAME | npm run add:fil COMPNAME
+<pre><code>    // These will build based on the enviroment you wanna build to
+    // Right now prod and staging is the same, you could change it for your project
+    // You need to set it up for s3 or just build it and serve in your project folder
+    npm run deploy:dev
+    npm run deploy:stag
+    npm run deploy:prod
 </code></pre>
 
 <h3>
@@ -177,27 +185,20 @@
 <li>Dynamicly get libs for karma config</li>
 <li>Enviroment based build processes available: (prod, stag, dev) - default "dev"</li>
 <li>Component based structure</li>
+<li>Project based CLI</li>
+<li>Angular loaded from external CDN</li>
+<li>RevReplace now also supported for json fixtures</li>
 </ul>
 
 <h3>
 <a id="next-up-todos" class="anchor" href="#next-up-todos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Next up Todo's</h3>
 
 <ul>
-<li>Add a project based CLI</li>
-<li>Move angular, to external CDN with fallback</li>
 <li>Rewrite starting app to be a simple hello world application with only nesseary content NG1 in ES6</li>
 <li>Default seo support</li>
-<li>Build a yeoman generator or npm cli for angular components</li>
 <li>Add a change log</li>
 <li>Contribution guide</li>
 <li>Move guides and more to wiki</li>
-</ul>
-
-<h3>
-<a id="known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known issues</h3>
-
-<ul>
-<li>RevReplace in fixtures/*.{json}</li>
 </ul>
 
 <p>Best regards</p>
